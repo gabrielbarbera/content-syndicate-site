@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-accent: #9bc621;
+  --color-dark: #101828;
+  --color-ink: #101828;
+  --color-paper: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-[#101828] font-sans antialiased selection:bg-[#9BC621] selection:text-[#101828];
+  }
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  /* Container utility */
+  .container {
+    @apply mx-auto px-6 lg:px-20;
+    max-width: 1400px;
+  }
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.grid-pattern-dark {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.glow-mesh {
+  background:
+    radial-gradient(at 0% 0%, var(--glow-color) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, var(--glow-color) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, var(--glow-color) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, var(--glow-color) 0px, transparent 50%);
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.glass-text {
+  color: rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.glass-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.05);
+  filter: blur(1px);
+}
+
+.glass-text:hover {
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.1));
+}
+
+.editorial-heading {
+  @apply font-serif italic font-normal;
+}
+
+/* Prose styles for legal content */
+.prose {
+  color: #525252;
+  max-width: 65ch;
+}
+
+.prose h1 {
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.8888889em;
+  line-height: 1.1111111;
+  font-weight: 700;
+  color: #101828;
+}
+
+.prose h2 {
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
+  font-weight: 600;
+  color: #101828;
+}
+
+.prose h3 {
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #101828;
+}
+
+.prose h4 {
+  font-size: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #101828;
+}
+
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  line-height: 1.75;
+}
+
+.prose ul {
+  list-style-type: disc;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+}
+
+.prose ul li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 0.375em;
+}
+
+.prose ul li::marker {
+  color: #9bc621;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+}
+
+.prose ol li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 0.375em;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #101828;
+}
+
+.prose a {
+  color: #9bc621;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.prose a:hover {
+  color: #7ea01a;
+}

@@ -1,0 +1,239 @@
+.nav-container {
+  width: 100%;
+  background: #101828;
+}
+
+.main-nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .main-nav {
+    padding: 0 5rem;
+  }
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 2rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-links-desktop {
+  display: none;
+  gap: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  padding: 0.5rem 1.125rem;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 1.125rem;
+  right: 1.125rem;
+  height: 1.5px;
+  background: #9bc621;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  color: #ffffff;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+  background: #9bc621;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.nav-login-link {
+  display: none;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 999px;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-login-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-cta-button {
+  display: none;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease,
+    filter 0.2s ease;
+}
+
+.nav-cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 20px rgba(155, 198, 33, 0.3),
+    0 0 6px rgba(155, 198, 33, 0.2);
+  filter: brightness(1.08);
+}
+
+.nav-cta-button:active {
+  transform: translateY(0);
+}
+
+.mobile-toggle {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+  z-index: 1001;
+}
+
+.mobile-toggle:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background: #101828;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.mobile-nav-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  padding: 0.75rem 2rem;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: #9bc621;
+}
+
+.mobile-cta-button {
+  border: none;
+  border-radius: 999px;
+  padding: 1rem 2.5rem;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.mobile-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(155, 198, 33, 0.3);
+}
+
+@media (min-width: 1080px) {
+  .nav-links-desktop {
+    display: flex;
+  }
+
+  .nav-login-link {
+    display: block;
+  }
+
+  .nav-cta-button {
+    display: block;
+  }
+
+  .mobile-toggle {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
