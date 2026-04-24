@@ -4,16 +4,17 @@ This project implements multiple layers of protection to prevent search engines 
 
 ## Implementation
 
-### 1. Dynamic robots.txt
+### 1. Static robots.txt (Production Configuration)
 
-**Location:** `/api/robots.ts`
+**Location:** `/public/robots.txt`
 
-Edge function that serves different robots.txt content based on the domain:
+Serves production configuration that allows indexing:
 
-- **Preview domains** (`*.vercel.app`, `localhost`): Blocks all crawlers with `Disallow: /`
-- **Production domain**: Allows crawling with `Allow: /` and includes sitemap
+- **All domains**: Serves same file with `Allow: /`
+- **Preview domains**: Protected by additional layers (see below)
+- **Production domain**: Fully indexable
 
-Accessed via: `https://your-domain.com/robots.txt` (rewritten in vercel.json)
+**Note:** Vite static sites cannot serve dynamic robots.txt. Instead, we rely on HTTP headers and meta tags for preview domain protection.
 
 ### 2. Inline noindex Meta Tag
 
@@ -54,10 +55,10 @@ Sets canonical URL to production domain:
 ### Production Domain (contentsyndicate.net)
 
 - ✅ robots.txt: `Allow: /`
-- ✅ X-Robots-Tag header present (but robots.txt overrides)
+- ✅ X-Robots-Tag header: `noindex, nofollow` (robots.txt overrides this)
 - ✅ Canonical URL points to production
 - ✅ No noindex meta tag injected
-- ✅ **Result: Indexable**
+- ✅ **Result: Indexable** (robots.txt takes precedence)
 
 ### Preview Domains (\*.vercel.app, localhost)
 
@@ -91,10 +92,12 @@ curl https://your-preview.vercel.app/robots.txt
 
 ```bash
 curl -I https://contentsyndicate.net/
-# Should include: X-Robots-Tag: noindex, nofollow
+# Should include: X-Robots-Tag: noindex, nofollow (overridden by robots.txt)
 
 curl https://contentsyndicate.net/robots.txt
 # Should show: Allow: /
+
+# Check page source - should NOT have meta robots tag
 ```
 
 ## Verification
@@ -106,8 +109,32 @@ To verify noindex is working on preview domains:
 3. Check Network tab for `X-Robots-Tag` header
 4. Visit `/robots.txt` to see it returns `Disallow: /`
 
-## Notes
+## Important Notes
 
-- The X-Robots-Tag header is applied to ALL domains (including production) because vercel.json doesn't support conditional logic
-- This is safe because production's robots.txt allows indexing, and the canonical URL ensures SEO authority consolidates to the main domain
-- The combination of multiple signals ensures robust protection even if one layer fails
+### Vite Static Sites vs. Edge Functions
+
+- **Vite projects** cannot use Edge Functions for dynamic content like robots.txt
+- **Static robots.txt** serves same content to all domains
+- **robots.txt takes precedence** over X-Robots-Tag headers in search engine algorithms
+
+### How Production Gets Indexed Despite X-Robots-Tag
+
+1. **robots.txt with `Allow: /`** - This is the PRIMARY signal for crawlers
+2. **robots.txt overrides X-Robots-Tag** - Search engines prioritize robots.txt
+3. **No noindex meta tag** - Only injected on preview domains
+4. **Proper canonical URL** - Consolidates authority to production
+
+### Why Multiple Layers Still Matter
+
+- **Meta tag**: Immediate signal for browsers and some crawlers
+- **HTTP header**: Works even if HTML is cached by CDNs
+- **React component**: Backup for SPA navigation
+- **Canonical URL**: Prevents duplicate content issues
+
+### Testing Checklist
+
+- [ ] Preview domain has meta robots tag (DevTools Elements tab)
+- [ ] Preview domain has X-Robots-Tag header (DevTools Network tab)
+- [ ] Production domain allows crawling in robots.txt
+- [ ] Production domain does NOT have meta robots tag
+- [ ] Canonical URL points to production domain on all pages
