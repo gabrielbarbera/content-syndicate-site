@@ -862,7 +862,7 @@ export default function RegisterPage() {
     if (!termsAccepted) return;
     setLoading(true);
     await new Promise((r) => setTimeout(r, 800));
-    window.location.href = "https://admin.contentsyndicate.net/signup/client";
+    window.location.href = "https://admin.contentsyndicate.net/signup";
   };
 
   const stepTitles = [
@@ -886,9 +886,12 @@ export default function RegisterPage() {
           </Link>
           <span className="text-sm text-gray-400">
             Already have an account?{" "}
-            <Link to="/login" className="text-accent font-semibold hover:underline">
+            <a
+              href="https://admin.contentsyndicate.net/signin"
+              className="text-accent font-semibold hover:underline"
+            >
               Sign in
-            </Link>
+            </a>
           </span>
         </div>
       </div>

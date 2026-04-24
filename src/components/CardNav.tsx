@@ -26,7 +26,7 @@ const CardNav: React.FC<CardNavProps> = ({
   buttonBgColor = "#9BC621",
   buttonTextColor = "#101828",
   onCtaClick,
-  loginHref = "/login",
+  loginHref = "https://admin.contentsyndicate.net/signin",
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const location = useLocation();
@@ -90,9 +90,9 @@ const CardNav: React.FC<CardNavProps> = ({
           </div>
 
           <div className="nav-actions">
-            <Link to={loginHref} className="nav-login-link">
+            <a href={loginHref} className="nav-login-link">
               Log In
-            </Link>
+            </a>
             <button
               type="button"
               className="nav-cta-button"
@@ -137,9 +137,9 @@ const CardNav: React.FC<CardNavProps> = ({
                 </Link>
               )
             )}
-            <Link to={loginHref} className="mobile-nav-link" onClick={() => setIsExpanded(false)}>
+            <a href={loginHref} className="mobile-nav-link" onClick={() => setIsExpanded(false)}>
               Log In
-            </Link>
+            </a>
             <button
               type="button"
               className="mobile-cta-button"

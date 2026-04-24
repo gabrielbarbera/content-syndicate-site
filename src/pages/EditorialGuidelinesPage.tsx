@@ -229,7 +229,7 @@ export default function EditorialGuidelinesPage() {
                   </p>
                 </div>
                 <motion.a
-                  href="https://admin.contentsyndicate.net/signup/client"
+                  href="https://admin.contentsyndicate.net/signup"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.03 }}

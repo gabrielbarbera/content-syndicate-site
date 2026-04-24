@@ -74,7 +74,7 @@ export default function AboutPage() {
                 businesses with global audiences through innovative technology and unmatched reach.
               </p>
               <motion.a
-                href="https://admin.contentsyndicate.net/signup/client"
+                href="https://admin.contentsyndicate.net/signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 text-dark font-semibold hover:text-accent transition-colors group"

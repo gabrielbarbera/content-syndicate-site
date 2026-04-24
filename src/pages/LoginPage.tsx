@@ -92,7 +92,7 @@ export default function LoginPage() {
           <p className="text-gray-500 mb-10">
             Don't have an account?{" "}
             <a
-              href="https://admin.contentsyndicate.net/signup/client"
+              href="https://admin.contentsyndicate.net/signup"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-accent hover:underline"

@@ -85,4 +85,4 @@ export const PROCESS_STEPS: ProcessStep[] = [
   },
 ];
 
-export const SIGNUP_URL = "https://admin.contentsyndicate.net/signup/client";
+export const SIGNUP_URL = "https://admin.contentsyndicate.net/signup";

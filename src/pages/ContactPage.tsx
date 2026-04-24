@@ -143,7 +143,7 @@ export default function ContactPage() {
               releases globally.
             </p>
             <motion.a
-              href="https://admin.contentsyndicate.net/signup/client"
+              href="https://admin.contentsyndicate.net/signup"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}

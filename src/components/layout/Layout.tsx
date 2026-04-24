@@ -239,8 +239,8 @@ function Footer() {
               </h4>
               <ul className="space-y-4">
                 <li>
-                  <Link
-                    to="/login"
+                  <a
+                    href="https://admin.contentsyndicate.net/signin"
                     className="group inline-flex items-center gap-2 text-gray-400 transition-all hover:text-accent"
                   >
                     Log In
@@ -248,7 +248,7 @@ function Footer() {
                       size={14}
                       className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
                     />
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <Link
@@ -369,7 +369,7 @@ export function Layout() {
         <CardNav
           logo={logo}
           items={NAV_ITEMS}
-          onCtaClick={() => (window.location.href = "/register")}
+          onCtaClick={() => (window.location.href = "https://admin.contentsyndicate.net/signup")}
         />
         <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       </header>

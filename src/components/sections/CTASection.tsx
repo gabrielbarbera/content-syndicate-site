@@ -6,7 +6,7 @@ const CTABlock = () => (
     <motion.a
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      href="https://admin.contentsyndicate.net/signup/client"
+      href="https://admin.contentsyndicate.net/signup"
       target="_blank"
       rel="noopener noreferrer"
       className="px-10 py-5 rounded-full text-lg font-bold text-white transition-all flex items-center gap-3 shadow-2xl bg-accent relative overflow-hidden group/btn"

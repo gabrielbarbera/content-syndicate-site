@@ -59,16 +59,14 @@ export default function AboutSection() {
               </span>
               <h2 className="text-4xl lg:text-5xl font-bold tracking-tight font-display text-dark mb-6 leading-tight">
                 Leading the Future of
-                <span className="block mt-2 editorial-heading text-accent">
-                  Press Distribution
-                </span>
+                <span className="block mt-2 editorial-heading text-accent">Press Distribution</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 Content Syndicate is the premier press release distribution platform, connecting
                 businesses with global audiences through innovative technology and unmatched reach.
               </p>
               <motion.a
-                href="https://admin.contentsyndicate.net/signup/client"
+                href="https://admin.contentsyndicate.net/signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 text-dark font-semibold hover:text-accent transition-colors group"
@@ -132,8 +130,8 @@ export default function AboutSection() {
               Exceptional Features
             </h2>
             <p className="text-lg text-gray-400 leading-relaxed">
-              Everything you need to amplify your message and reach your target audience with precision
-              and impact.
+              Everything you need to amplify your message and reach your target audience with
+              precision and impact.
             </p>
           </motion.div>
 

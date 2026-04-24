@@ -262,7 +262,7 @@ export default function SolutionsPage() {
                     </div>
 
                     <motion.a
-                      href="https://admin.contentsyndicate.net/signup/client"
+                      href="https://admin.contentsyndicate.net/signup"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.03 }}
@@ -379,7 +379,7 @@ export default function SolutionsPage() {
                     </div>
 
                     <motion.a
-                      href="https://admin.contentsyndicate.net/signup/client"
+                      href="https://admin.contentsyndicate.net/signup"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.03 }}
