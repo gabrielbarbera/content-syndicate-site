@@ -4,7 +4,16 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "edge"
+    }
+  },
   "rewrites": [
+    {
+      "source": "/robots.txt",
+      "destination": "/api/robots"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
@@ -43,6 +52,10 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
         }
       ]
     }

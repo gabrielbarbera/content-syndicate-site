@@ -4,6 +4,7 @@ import { Globe, ArrowUpRight, Mail, Facebook, Instagram, Rss, ExternalLink } fro
 import { motion } from "motion/react";
 import CardNav from "../CardNav";
 import { CONTENT } from "../../lib/constants";
+import RoboMetaTag from "../RoboMetaTag";
 
 const NAV_ITEMS = [
   { label: "Solutions", href: "/solutions" },
@@ -363,6 +364,7 @@ export function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <RoboMetaTag />
       <header className="bg-dark relative sticky top-0 z-50">
         <div className="h-[2px] bg-gradient-to-r from-accent/0 via-accent to-accent/0" />
         <TopBar />

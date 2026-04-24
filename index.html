@@ -8,6 +8,26 @@
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="canonical" href="https://contentsyndicate.net/" />
 
+    <!-- Dynamic noindex for preview domains (executes before React loads) -->
+    <script type="module">
+      (function () {
+        const hostname = window.location.hostname;
+        const isPreviewDomain =
+          hostname.includes(".vercel.app") ||
+          hostname.includes(".preview.") ||
+          hostname === "localhost:3000" ||
+          hostname.startsWith("localhost:");
+
+        if (isPreviewDomain) {
+          const meta = document.createElement("meta");
+          meta.name = "robots";
+          meta.content = "noindex, nofollow";
+          document.head.appendChild(meta);
+          console.log("[SEO] Added noindex meta tag for preview domain:", hostname);
+        }
+      })();
+    </script>
+
     <!-- Primary Meta Tags -->
     <meta name="title" content="Content Syndicate - High-Authority PR Distribution" />
     <meta
