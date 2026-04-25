@@ -42,7 +42,7 @@ export default function LoginPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-gray-400 text-lg leading-relaxed"
+            className="text-gray-200 text-lg leading-relaxed"
           >
             Log in to submit releases, track distribution, and manage your account.
           </motion.p>
@@ -61,7 +61,7 @@ export default function LoginPage() {
           ].map((stat, idx) => (
             <div key={idx}>
               <div className="text-2xl font-bold text-accent font-display">{stat.value}</div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider">{stat.label}</div>
+              <div className="text-xs text-gray-700 uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -89,7 +89,7 @@ export default function LoginPage() {
           <h1 className="text-3xl lg:text-4xl font-bold tracking-tight font-display text-dark mb-2">
             Welcome back
           </h1>
-          <p className="text-gray-500 mb-10">
+          <p className="text-gray-700 mb-10">
             Don't have an account?{" "}
             <a
               href="https://admin.contentsyndicate.net/signup"
@@ -110,7 +110,7 @@ export default function LoginPage() {
               <div className="relative">
                 <Mail
                   size={18}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-200 pointer-events-none"
                 />
                 <input
                   id="email"
@@ -142,7 +142,7 @@ export default function LoginPage() {
               <div className="relative">
                 <Lock
                   size={18}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-200 pointer-events-none"
                 />
                 <input
                   id="password"
@@ -156,7 +156,7 @@ export default function LoginPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-dark transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-200 hover:text-dark transition-colors"
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -186,7 +186,7 @@ export default function LoginPage() {
           {/* Divider */}
           <div className="my-8 flex items-center gap-4">
             <div className="flex-1 h-px bg-zinc-200" />
-            <span className="text-xs text-gray-400 uppercase tracking-wider">or</span>
+            <span className="text-xs text-gray-200 uppercase tracking-wider">or</span>
             <div className="flex-1 h-px bg-zinc-200" />
           </div>
 
@@ -199,7 +199,7 @@ export default function LoginPage() {
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Link>
 
-          <p className="mt-8 text-center text-xs text-gray-400">
+          <p className="mt-8 text-center text-xs text-gray-200">
             By signing in you agree to our{" "}
             <Link to="/terms" className="hover:text-accent underline">
               Terms

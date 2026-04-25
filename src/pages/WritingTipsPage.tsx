@@ -85,7 +85,7 @@ export default function WritingTipsPage() {
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 font-display leading-tight">
                 How to Create Press Releases That Get Results
               </h2>
-              <p className="text-lg text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-200 leading-relaxed">
                 Learn the strategies and techniques that make press releases impossible to ignore
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function WritingTipsPage() {
                     <h4 className="mb-2 font-semibold text-white group-hover:text-accent transition-colors">
                       {example.title}
                     </h4>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-gray-200">
                       <span className="inline-flex items-center gap-1">
                         <svg
                           className="w-3 h-3"

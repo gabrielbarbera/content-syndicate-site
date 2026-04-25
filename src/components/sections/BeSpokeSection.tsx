@@ -100,7 +100,7 @@ export default function BeSpokeSection() {
               <h4 className="mb-3 text-xl font-bold text-dark group-hover:text-accent transition-colors">
                 {item.title}
               </h4>
-              <p className="text-gray-500 leading-relaxed">{item.description}</p>
+              <p className="text-gray-700 leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>
@@ -134,7 +134,7 @@ export default function BeSpokeSection() {
                 href="/contact"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-dark font-bold rounded-full hover:bg-accent/90 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-dark font-bold rounded-full hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-all"
               >
                 Start a Conversation
                 <ArrowUpRight size={18} />
@@ -145,7 +145,7 @@ export default function BeSpokeSection() {
           <div>
             <h3 className="text-2xl font-bold text-dark mb-8 font-display">
               BeSpoke™ Strategy Menu
-              <span className="block text-base font-normal text-gray-500 mt-1">What is your Goal?</span>
+              <span className="block text-base font-normal text-gray-700 mt-1">What is your Goal?</span>
             </h3>
             <div className="space-y-4">
               {STRATEGY_MENU.map((item, idx) => (

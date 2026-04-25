@@ -76,7 +76,7 @@ export default function AffiliatePage() {
                 <h3 className="mb-3 text-xl font-bold text-white group-hover:text-accent transition-colors">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
+                <p className="text-gray-200 leading-relaxed">{benefit.description}</p>
               </motion.div>
             ))}
           </div>

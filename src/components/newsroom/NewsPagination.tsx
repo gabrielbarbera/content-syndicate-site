@@ -49,7 +49,7 @@ export function NewsPagination({ pagination, onPageChange, totalItems }: NewsPag
 
   return (
     <div className="flex flex-col items-center gap-4 pt-6 sm:flex-row sm:justify-between border-t border-white/[0.05]">
-      <p className="text-[0.75rem] text-gray-500">
+      <p className="text-[0.75rem] text-gray-700">
         <span className="text-white/70 font-medium">
           {startItem}–{endItem}
         </span>{" "}

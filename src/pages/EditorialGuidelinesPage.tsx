@@ -136,7 +136,7 @@ export default function EditorialGuidelinesPage() {
                     <h3 className="text-lg font-bold text-accent mb-3 group-hover:text-white transition-colors">
                       {item.label}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed">{item.text}</p>
+                    <p className="text-gray-200 leading-relaxed">{item.text}</p>
                   </motion.div>
                 ))}
               </div>
@@ -177,7 +177,7 @@ export default function EditorialGuidelinesPage() {
                     <Globe size={22} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">
+                    <div className="text-xs font-bold text-gray-200 uppercase tracking-wider mb-1">
                       Website
                     </div>
                     <div className="font-semibold text-dark group-hover:text-accent transition-colors">
@@ -193,7 +193,7 @@ export default function EditorialGuidelinesPage() {
                     <Mail size={22} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">
+                    <div className="text-xs font-bold text-gray-200 uppercase tracking-wider mb-1">
                       Media Inquiries
                     </div>
                     <div className="font-semibold text-dark group-hover:text-accent transition-colors">
@@ -234,7 +234,7 @@ export default function EditorialGuidelinesPage() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-dark font-bold rounded-full hover:bg-accent/90 transition-all"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-dark font-bold rounded-full hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-all"
                 >
                   Submit Press Release
                 </motion.a>

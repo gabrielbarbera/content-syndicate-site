@@ -20,7 +20,7 @@ const FormInput = forwardRef<
     ref
   ) => {
     const baseClassName =
-      "w-full rounded-xl border border-zinc-200 bg-zinc-50 py-3 px-4 text-dark placeholder:text-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all";
+      "w-full rounded-xl border border-zinc-200 bg-zinc-50 py-3 px-4 text-dark placeholder:text-gray-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all";
 
     let inputElement;
 

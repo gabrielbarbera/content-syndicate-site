@@ -56,7 +56,7 @@ export default function FAQSection() {
           <h2 className="text-4xl lg:text-6xl font-bold tracking-tighter font-display text-dark mb-6">
             Press Release <span className="editorial-heading">Best Practices</span>
           </h2>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Everything you need to know to write press releases that get results.
           </p>
         </motion.div>

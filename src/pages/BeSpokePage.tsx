@@ -212,7 +212,7 @@ export default function BeSpokePage() {
               BeSpoke™ is a fully customizable alternative to mainstream media plans, built for
               companies that want a tailored approach to visibility.
             </p>
-            <p className="text-lg text-gray-500 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed">
               Combining organic article placements with a broad mix of media channels that reach
               audiences wherever they are. Unlike fixed-tier packages, BeSpoke™ is structured around
               your campaign — giving you the flexibility to prioritize the channels that matter most
@@ -236,7 +236,7 @@ export default function BeSpokePage() {
                 <h3 className="mb-3 text-xl font-bold text-dark group-hover:text-accent transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-gray-500 leading-relaxed">{feature.description}</p>
+                <p className="text-gray-700 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -255,7 +255,7 @@ export default function BeSpokePage() {
               A <span className="editorial-heading text-accent">Fully Customizable</span> Media
               Strategy
             </h2>
-            <p className="text-xl text-gray-400 leading-relaxed">
+            <p className="text-xl text-gray-200 leading-relaxed">
               We offer a high-impact, three-tier strategy designed to move your brand beyond the
               digital noise and into the national spotlight.
             </p>
@@ -274,7 +274,7 @@ export default function BeSpokePage() {
                 <Sparkles size={20} className="text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-bold text-white mb-2">{advantage.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{advantage.description}</p>
+                  <p className="text-gray-200 leading-relaxed">{advantage.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -386,7 +386,7 @@ export default function BeSpokePage() {
                 </tr>
                 <tr className="border-b border-zinc-100">
                   <td className="p-6 text-dark font-medium">Organic Articles</td>
-                  <td className="p-6 text-center text-gray-400">—</td>
+                  <td className="p-6 text-center text-gray-700">—</td>
                   <td className="p-6 text-center text-gray-600">1</td>
                   <td className="p-6 text-center text-accent font-bold">1</td>
                 </tr>
@@ -394,7 +394,7 @@ export default function BeSpokePage() {
                   <td className="p-6 text-dark font-medium">
                     Investing.com, TheStreet.com or USA Today
                   </td>
-                  <td className="p-6 text-center text-gray-400">—</td>
+                  <td className="p-6 text-center text-gray-700">—</td>
                   <td className="p-6 text-center text-accent font-bold">✓</td>
                   <td className="p-6 text-center text-accent font-bold">✓</td>
                 </tr>
@@ -406,8 +406,8 @@ export default function BeSpokePage() {
                 </tr>
                 <tr className="border-b border-zinc-100">
                   <td className="p-6 text-dark font-medium">Nasdaq Billboard</td>
-                  <td className="p-6 text-center text-gray-400">—</td>
-                  <td className="p-6 text-center text-gray-400">—</td>
+                  <td className="p-6 text-center text-gray-700">—</td>
+                  <td className="p-6 text-center text-gray-700">—</td>
                   <td className="p-6 text-center text-accent font-bold">✓</td>
                 </tr>
                 <tr className="border-b border-zinc-100">
@@ -446,7 +446,7 @@ export default function BeSpokePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-gray-400 leading-relaxed mb-10"
+              className="text-xl text-gray-700 leading-relaxed mb-10"
             >
               For custom integrations including National Broadcast TV, Radio, and Digital Billboard
               placements, reach out to our team.
@@ -462,12 +462,12 @@ export default function BeSpokePage() {
                 href="mailto:sales@blockchainwire.io"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-dark font-bold rounded-full hover:bg-accent/90 transition-all text-lg shadow-xl shadow-accent/20"
+                className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-dark font-bold rounded-full hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-all text-lg shadow-xl shadow-accent/20"
               >
                 Contact Sales
                 <ArrowRight size={20} />
               </motion.a>
-              <span className="text-gray-500 text-sm">
+              <span className="text-gray-700 text-sm">
                 Custom Media Residency Plans start at $35,000 per month
               </span>
             </motion.div>

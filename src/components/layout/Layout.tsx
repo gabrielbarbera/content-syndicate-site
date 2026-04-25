@@ -29,7 +29,7 @@ function TopBar() {
     <div className="py-1.5 px-6 lg:px-20 bg-[#0c1219] border-b border-white/[0.04]">
       <div className="mx-auto max-w-[1400px] flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <span className="text-[0.625rem] text-white/25 uppercase tracking-[0.25em] font-semibold hidden sm:block">
+          <span className="text-[0.625rem] text-white/90 uppercase tracking-[0.25em] font-semibold hidden sm:block">
             Partners
           </span>
           <div className="flex items-center gap-3">
@@ -37,7 +37,7 @@ function TopBar() {
               href="https://blockchainwire.io/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[0.75rem] font-semibold text-white/60 hover:text-accent transition-colors duration-200"
+              className="flex items-center gap-1.5 text-[0.75rem] font-semibold text-white/90 hover:text-accent transition-colors duration-200"
             >
               <ExternalLink size={11} />
               BlockchainWire
@@ -47,7 +47,7 @@ function TopBar() {
               href="https://www.cryptobell.live/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[0.75rem] font-semibold text-white/60 hover:text-accent transition-colors duration-200"
+              className="flex items-center gap-1.5 text-[0.75rem] font-semibold text-white/90 hover:text-accent transition-colors duration-200"
             >
               <ExternalLink size={11} />
               CryptoBell.Live
@@ -58,7 +58,7 @@ function TopBar() {
         <div className="flex items-center gap-4">
           <a
             href="mailto:sales@contentsyndicate.net"
-            className="hidden sm:flex items-center gap-1.5 text-[0.75rem] font-medium text-white/50 hover:text-white/80 transition-colors duration-200"
+            className="hidden sm:flex items-center gap-1.5 text-[0.75rem] font-medium text-white/90 hover:text-white transition-colors duration-200"
           >
             <Mail size={12} />
             sales@contentsyndicate.net
@@ -69,7 +69,7 @@ function TopBar() {
               href="https://www.facebook.com/share/1CULekGk3q/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-accent transition-colors duration-200"
+              className="text-white/90 hover:text-accent transition-colors duration-200"
               aria-label="Facebook"
             >
               <Facebook size={13} />
@@ -78,7 +78,7 @@ function TopBar() {
               href="https://www.instagram.com/content_syndicate_news/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-accent transition-colors duration-200"
+              className="text-white/90 hover:text-accent transition-colors duration-200"
               aria-label="Instagram"
             >
               <Instagram size={13} />
@@ -87,7 +87,7 @@ function TopBar() {
               href="https://newapi.contentsyndicate.net/feed-rss.xml"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-accent transition-colors duration-200"
+              className="text-white/90 hover:text-accent transition-colors duration-200"
               aria-label="RSS Feed"
             >
               <Rss size={13} />
@@ -150,7 +150,7 @@ function Footer() {
                   className="h-10 w-auto"
                 />
               </Link>
-              <p className="text-base text-gray-400 leading-relaxed mb-8 max-w-sm">
+              <p className="text-base text-gray-200 leading-relaxed mb-8 max-w-sm">
                 {CONTENT.about}
               </p>
 
@@ -167,7 +167,7 @@ function Footer() {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 + 0.2 }}
                     whileHover={{ y: -3, scale: 1.1 }}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 transition-all hover:bg-accent hover:text-dark hover:border-accent"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-200 transition-all hover:bg-accent hover:text-dark hover:border-accent"
                     aria-label={social.label}
                   >
                     <social.icon size={18} />
@@ -200,7 +200,7 @@ function Footer() {
                   <li key={item.href}>
                     <Link
                       to={item.href}
-                      className="group inline-flex items-center gap-2 text-gray-400 transition-all hover:text-accent"
+                      className="group inline-flex items-center gap-2 text-gray-200 transition-all hover:text-accent"
                     >
                       {item.label}
                       <ArrowUpRight
@@ -219,7 +219,7 @@ function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-2 text-gray-400 transition-all hover:text-accent"
+                      className="group inline-flex items-center gap-2 text-gray-200 transition-all hover:text-accent"
                     >
                       {item.label}
                       <Globe size={14} className="opacity-60" />
@@ -317,7 +317,7 @@ function Footer() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-sm text-gray-500"
+                className="text-sm text-gray-700"
               >
                 © {currentYear} {CONTENT.name}. All rights reserved.
               </motion.p>
@@ -329,7 +329,7 @@ function Footer() {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToTop}
-                className="group flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors"
+                className="group flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:text-dark transition-colors"
               >
                 <span>Back to top</span>
                 <ArrowUpRight
@@ -354,6 +354,12 @@ export function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent focus:text-dark focus:font-bold focus:rounded-lg"
+      >
+        Skip to main content
+      </a>
       <RoboMetaTag />
       <header className="bg-dark relative sticky top-0 z-50">
         <div className="h-[2px] bg-gradient-to-r from-accent/0 via-accent to-accent/0" />
@@ -366,7 +372,7 @@ export function Layout() {
         <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       </header>
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <Outlet />
       </main>
 

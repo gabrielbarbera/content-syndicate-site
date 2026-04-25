@@ -21,7 +21,7 @@ export function NewsCard({ release }: NewsCardProps) {
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="relative flex flex-1 flex-col p-6 lg:p-7">
-        <div className="mb-5 flex items-center gap-3 text-[0.6875rem] text-gray-500">
+        <div className="mb-5 flex items-center gap-3 text-[0.6875rem] text-gray-700">
           <div className="flex items-center gap-1.5">
             <Calendar size={11} className="text-accent/60" />
             <time dateTime={release.pubDate} className="font-medium tracking-wide">
@@ -43,7 +43,7 @@ export function NewsCard({ release }: NewsCardProps) {
           {release.title}
         </h3>
 
-        <p className="mb-6 flex-1 line-clamp-3 text-[0.8125rem] text-gray-500 leading-relaxed [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]">
+        <p className="mb-6 flex-1 line-clamp-3 text-[0.8125rem] text-gray-700 leading-relaxed [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]">
           {release.description}
         </p>
 

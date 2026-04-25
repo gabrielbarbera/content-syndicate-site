@@ -77,7 +77,7 @@ export default function ContactPage() {
                       <item.icon size={24} />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">
+                      <p className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-1">
                         {item.label}
                       </p>
                       <p className="text-lg font-semibold text-dark group-hover:text-accent transition-colors">
@@ -140,7 +140,7 @@ export default function ContactPage() {
             <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6 font-display leading-tight">
               Ready to Amplify Your Message?
             </h3>
-            <p className="text-lg text-gray-400 mb-10 leading-relaxed">
+            <p className="text-lg text-gray-200 mb-10 leading-relaxed">
               Join thousands of businesses who trust Content Syndicate to distribute their press
               releases globally.
             </p>

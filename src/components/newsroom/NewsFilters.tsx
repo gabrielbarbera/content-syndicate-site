@@ -59,7 +59,7 @@ export function NewsFilters({
         <div>
           <label
             htmlFor="org-filter"
-            className="mb-2 block text-[0.75rem] font-medium text-gray-400 tracking-wide"
+            className="mb-2 block text-[0.75rem] font-medium text-gray-200 tracking-wide"
           >
             Organization
           </label>
@@ -83,7 +83,7 @@ export function NewsFilters({
         <div>
           <label
             htmlFor="date-filter"
-            className="mb-2 block text-[0.75rem] font-medium text-gray-400 tracking-wide"
+            className="mb-2 block text-[0.75rem] font-medium text-gray-200 tracking-wide"
           >
             <span className="flex items-center gap-1.5">
               <Calendar size={12} />
@@ -98,7 +98,7 @@ export function NewsFilters({
                 className={`rounded-md py-1.5 px-2.5 text-[0.6875rem] font-medium transition-all duration-200 ${
                   filters.dateRange === opt.value
                     ? "bg-accent/15 text-accent border border-accent/30"
-                    : "text-gray-500 border border-white/[0.06] hover:text-gray-300 hover:border-white/[0.12]"
+                    : "text-gray-700 border border-white/[0.06] hover:text-gray-300 hover:border-white/[0.12]"
                 }`}
               >
                 {opt.label}

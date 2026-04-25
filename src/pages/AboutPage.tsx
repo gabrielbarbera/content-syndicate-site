@@ -142,7 +142,7 @@ export default function AboutPage() {
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight font-display leading-tight">
               Exceptional Features
             </h2>
-            <p className="text-lg text-gray-400 leading-relaxed">
+            <p className="text-lg text-gray-200 leading-relaxed">
               Everything you need to amplify your message and reach your target audience with
               precision and impact.
             </p>
@@ -173,7 +173,7 @@ export default function AboutPage() {
                     <h3 className="mb-4 text-xl font-bold text-white group-hover:text-accent transition-colors">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+                    <p className="text-gray-200 leading-relaxed group-hover:text-white transition-colors">
                       {feature.description}
                     </p>
                   </div>

@@ -202,7 +202,7 @@ function SelectField({
       </select>
       <ChevronDown
         size={16}
-        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-200 pointer-events-none"
       />
     </div>
   );
@@ -234,7 +234,7 @@ function PhoneField({
         </select>
         <ChevronDown
           size={14}
-          className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-200 pointer-events-none"
         />
       </div>
       <input
@@ -438,7 +438,7 @@ function StepAdditionalInfo({
               />
               <div>
                 <p className="font-semibold text-dark text-sm">{data.logo.name}</p>
-                <p className="text-xs text-gray-400">{(data.logo.size / 1024).toFixed(1)} KB</p>
+                <p className="text-xs text-gray-200">{(data.logo.size / 1024).toFixed(1)} KB</p>
               </div>
               <button
                 type="button"
@@ -446,7 +446,7 @@ function StepAdditionalInfo({
                   e.stopPropagation();
                   onChange({ logo: null });
                 }}
-                className="ml-2 text-gray-400 hover:text-red-500 transition-colors"
+                className="ml-2 text-gray-200 hover:text-red-500 transition-colors"
               >
                 <X size={16} />
               </button>
@@ -458,8 +458,8 @@ function StepAdditionalInfo({
               </div>
               <div className="text-center">
                 <p className="font-semibold text-dark text-sm">Drag & Drop Logo Here</p>
-                <p className="text-xs text-gray-400 mt-1">or click to browse</p>
-                <p className="text-xs text-gray-400 mt-1">JPEG, JPG, PNG · Max 256 KB</p>
+                <p className="text-xs text-gray-200 mt-1">or click to browse</p>
+                <p className="text-xs text-gray-200 mt-1">JPEG, JPG, PNG · Max 256 KB</p>
               </div>
             </>
           )}
@@ -599,7 +599,7 @@ function StepPrimaryContact({
           <button
             type="button"
             onClick={() => setShowPw(!showPw)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-dark transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-200 hover:text-dark transition-colors"
           >
             {showPw ? <EyeOff size={16} /> : <Eye size={16} />}
           </button>
@@ -618,7 +618,7 @@ function StepPrimaryContact({
           <button
             type="button"
             onClick={() => setShowCpw(!showCpw)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-dark transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-200 hover:text-dark transition-colors"
           >
             {showCpw ? <EyeOff size={16} /> : <Eye size={16} />}
           </button>
@@ -887,7 +887,7 @@ export default function RegisterPage() {
                 className="h-8 w-auto"
               />
             </Link>
-            <span className="text-sm text-gray-400">
+            <span className="text-sm text-gray-200">
               Already have an account?{" "}
               <a
                 href="https://admin.contentsyndicate.net/signin"
@@ -908,12 +908,12 @@ export default function RegisterPage() {
             <h1 className="text-3xl lg:text-4xl font-bold tracking-tight font-display text-dark mb-3">
               Create your Free News Releases Account
             </h1>
-            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-700 max-w-2xl mx-auto leading-relaxed">
               Register now to start distributing press releases to targeted audiences around the
               globe. There is no charge to register an account. You pay only for the services you
               choose.
             </p>
-            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed mt-3">
+            <p className="text-gray-700 max-w-2xl mx-auto leading-relaxed mt-3">
               Content Syndicate is the industry's premier, full-service press release distribution
               newswire. Our global reach includes broadcast and online media outlets, social media
               sites, industry trade publications, leading blogs and industry influencers.
@@ -940,13 +940,13 @@ export default function RegisterPage() {
                           ? "bg-accent border-accent text-dark"
                           : active
                             ? "bg-dark border-dark text-white"
-                            : "bg-white border-zinc-300 text-gray-400"
+                            : "bg-white border-zinc-300 text-gray-200"
                       }`}
                     >
                       {done ? <CheckCircle2 size={18} /> : s.id}
                     </div>
                     <span
-                      className={`text-xs font-semibold hidden sm:block transition-colors ${active ? "text-dark" : done ? "text-accent" : "text-gray-400"}`}
+                      className={`text-xs font-semibold hidden sm:block transition-colors ${active ? "text-dark" : done ? "text-accent" : "text-gray-200"}`}
                     >
                       {s.label}
                     </span>
@@ -961,7 +961,7 @@ export default function RegisterPage() {
             {/* Section header */}
             <div className="bg-dark px-8 py-6">
               <h2 className="text-xl font-bold text-white font-display">{stepTitles[step - 1]}</h2>
-              <p className="text-sm text-gray-400 mt-1">
+              <p className="text-sm text-gray-200 mt-1">
                 Step {step} of {STEPS.length}
               </p>
             </div>
@@ -1022,7 +1022,7 @@ export default function RegisterPage() {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                     disabled={step === 1}
-                    className="flex items-center gap-2 px-6 py-3 rounded-xl border border-zinc-200 text-gray-500 font-semibold hover:border-accent hover:text-accent transition-all disabled:opacity-30 disabled:cursor-not-allowed text-sm"
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl border border-zinc-200 text-gray-700 font-semibold hover:border-accent hover:text-accent transition-all disabled:opacity-30 disabled:cursor-not-allowed text-sm"
                   >
                     <ArrowLeft size={16} /> Back
                   </button>
@@ -1043,7 +1043,7 @@ export default function RegisterPage() {
                       setStep(4);
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
-                    className="flex items-center gap-2 px-6 py-3 rounded-xl border border-zinc-200 text-gray-500 font-semibold hover:border-accent hover:text-accent transition-all text-sm mb-6"
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl border border-zinc-200 text-gray-700 font-semibold hover:border-accent hover:text-accent transition-all text-sm mb-6"
                   >
                     <ArrowLeft size={16} /> Back
                   </button>
@@ -1052,7 +1052,7 @@ export default function RegisterPage() {
             </form>
           </div>
 
-          <p className="mt-6 text-center text-xs text-gray-400">
+          <p className="mt-6 text-center text-xs text-gray-200">
             By creating an account you agree to our{" "}
             <Link to="/terms" className="hover:text-accent underline">
               Terms

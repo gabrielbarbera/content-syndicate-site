@@ -140,7 +140,7 @@ export default function SolutionsPage() {
               role="tab"
               aria-selected={isIndividuals}
               className={`px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
-                isIndividuals ? "bg-dark text-white shadow-lg" : "text-gray-500 hover:text-dark"
+                isIndividuals ? "bg-dark text-white shadow-lg" : "text-gray-700 hover:text-dark"
               }`}
             >
               For Individuals
@@ -148,7 +148,7 @@ export default function SolutionsPage() {
             <button
               onClick={() => setActiveTab("businesses")}
               className={`px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
-                !isIndividuals ? "bg-dark text-white shadow-lg" : "text-gray-500 hover:text-dark"
+                !isIndividuals ? "bg-dark text-white shadow-lg" : "text-gray-700 hover:text-dark"
               }`}
             >
               For Businesses
@@ -202,7 +202,7 @@ export default function SolutionsPage() {
                       <h3 className="mb-3 text-xl font-bold text-dark group-hover:text-accent transition-colors">
                         {seg.title}
                       </h3>
-                      <p className="text-gray-500 leading-relaxed">{seg.description}</p>
+                      <p className="text-gray-700 leading-relaxed">{seg.description}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -321,7 +321,7 @@ export default function SolutionsPage() {
                       <h3 className="mb-3 text-xl font-bold text-dark group-hover:text-accent transition-colors">
                         {seg.title}
                       </h3>
-                      <p className="text-gray-500 leading-relaxed">{seg.description}</p>
+                      <p className="text-gray-700 leading-relaxed">{seg.description}</p>
                     </motion.div>
                   ))}
                 </div>

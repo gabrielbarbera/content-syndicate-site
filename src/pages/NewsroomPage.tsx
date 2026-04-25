@@ -81,7 +81,7 @@ export default function NewsroomPage() {
                 <AlertCircle className="text-red-400" size={28} />
               </div>
               <h3 className="text-lg font-bold text-white font-display">Failed to Load News</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed">
                 We couldn't fetch the latest press releases. Please try again later.
               </p>
             </div>
@@ -123,7 +123,7 @@ export default function NewsroomPage() {
                 <div className="text-2xl lg:text-3xl font-bold text-accent font-display">
                   {stat.value}
                 </div>
-                <div className="text-[0.625rem] font-semibold text-gray-500 uppercase tracking-[0.15em] mt-0.5">
+                <div className="text-[0.625rem] font-semibold text-gray-700 uppercase tracking-[0.15em] mt-0.5">
                   {stat.label}
                 </div>
               </motion.div>
@@ -183,7 +183,7 @@ export default function NewsroomPage() {
                   className="rounded-xl border border-white/[0.07] bg-white/[0.02] p-14 text-center"
                 >
                   <Newspaper className="mx-auto mb-4 text-gray-700" size={36} />
-                  <p className="text-[0.9375rem] text-gray-400 font-medium mb-1">
+                  <p className="text-[0.9375rem] text-gray-200 font-medium mb-1">
                     No Results Found
                   </p>
                   <p className="text-[0.8125rem] text-gray-600">
@@ -197,7 +197,7 @@ export default function NewsroomPage() {
                     animate={{ opacity: 1 }}
                     className="mb-5 flex items-center justify-between"
                   >
-                    <p className="text-[0.75rem] text-gray-500">
+                    <p className="text-[0.75rem] text-gray-700">
                       <span className="text-white/60 font-medium">{filteredReleases.length}</span>{" "}
                       {filteredReleases.length === 1 ? "article" : "articles"}
                     </p>
