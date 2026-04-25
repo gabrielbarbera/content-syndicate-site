@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { PageHeader } from "../components/layout/PageHeader";
 import FinalCTASection from "../components/sections/FinalCTASection";
+import SEO from "../components/SEO";
 
 const FEATURES = [
   {
@@ -188,6 +189,7 @@ const TIERS = [
 export default function BeSpokePage() {
   return (
     <>
+      <SEO />
       <PageHeader
         title="BeSpoke™"
         subtitle="For brands looking for something beyond a standard media package"

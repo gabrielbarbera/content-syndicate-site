@@ -10,6 +10,7 @@ import { useRssFeed } from "../hooks/useRssFeed";
 import { useDebounce } from "../hooks/useDebounce";
 import { filterPressReleases, extractOrganizations } from "../lib/api";
 import type { NewsroomFilters, PaginationState } from "../types/newsroom";
+import SEO from "../components/SEO";
 
 export default function NewsroomPage() {
   const { data: releases, loading, error } = useRssFeed();
@@ -70,6 +71,7 @@ export default function NewsroomPage() {
   if (error) {
     return (
       <>
+        <SEO />
         <PageHeader title="Newsroom" subtitle="The Latest Press Releases" overline="Newsroom" />
         <section className="relative overflow-hidden bg-dark py-24">
           <div className="absolute inset-0 grid-pattern-dark opacity-20" />
@@ -91,6 +93,7 @@ export default function NewsroomPage() {
 
   return (
     <>
+      <SEO />
       <PageHeader
         title="Newsroom"
         subtitle="The latest press releases & industry updates"

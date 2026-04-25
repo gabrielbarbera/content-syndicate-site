@@ -15,6 +15,7 @@ import {
   FileText,
   ChevronDown,
 } from "lucide-react";
+import SEO from "../components/SEO";
 
 interface CompanyInfo {
   companyName: string;
@@ -874,192 +875,195 @@ export default function RegisterPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="bg-dark border-b border-white/10">
-        <div className="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
-          <Link to="/" className="block">
-            <img
-              src="/images/Contentsyndicate Logo Dark.svg"
-              alt="Content Syndicate"
-              className="h-8 w-auto"
-            />
-          </Link>
-          <span className="text-sm text-gray-400">
-            Already have an account?{" "}
-            <a
-              href="https://admin.contentsyndicate.net/signin"
-              className="text-accent font-semibold hover:underline"
-            >
-              Sign in
-            </a>
-          </span>
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-5xl px-6 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-10 text-center"
-        >
-          <h1 className="text-3xl lg:text-4xl font-bold tracking-tight font-display text-dark mb-3">
-            Create your Free News Releases Account
-          </h1>
-          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Register now to start distributing press releases to targeted audiences around the
-            globe. There is no charge to register an account. You pay only for the services you
-            choose.
-          </p>
-          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed mt-3">
-            Content Syndicate is the industry's premier, full-service press release distribution
-            newswire. Our global reach includes broadcast and online media outlets, social media
-            sites, industry trade publications, leading blogs and industry influencers.
-          </p>
-        </motion.div>
-
-        {/* Step progress */}
-        <div className="mb-10">
-          <div className="flex items-center justify-between relative">
-            {/* connector line */}
-            <div className="absolute top-5 left-0 right-0 h-0.5 bg-zinc-200 -z-10" />
-            <div
-              className="absolute top-5 left-0 h-0.5 bg-accent -z-10 transition-all duration-500"
-              style={{ width: `${((step - 1) / (STEPS.length - 1)) * 100}%` }}
-            />
-            {STEPS.map((s) => {
-              const done = step > s.id;
-              const active = step === s.id;
-              return (
-                <div key={s.id} className="flex flex-col items-center gap-2">
-                  <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border-2 text-sm font-bold transition-all duration-300 ${
-                      done
-                        ? "bg-accent border-accent text-dark"
-                        : active
-                          ? "bg-dark border-dark text-white"
-                          : "bg-white border-zinc-300 text-gray-400"
-                    }`}
-                  >
-                    {done ? <CheckCircle2 size={18} /> : s.id}
-                  </div>
-                  <span
-                    className={`text-xs font-semibold hidden sm:block transition-colors ${active ? "text-dark" : done ? "text-accent" : "text-gray-400"}`}
-                  >
-                    {s.label}
-                  </span>
-                </div>
-              );
-            })}
+    <>
+      <SEO />
+      <div className="min-h-screen bg-white">
+        <div className="bg-dark border-b border-white/10">
+          <div className="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
+            <Link to="/" className="block">
+              <img
+                src="/images/Contentsyndicate Logo Dark.svg"
+                alt="Content Syndicate"
+                className="h-8 w-auto"
+              />
+            </Link>
+            <span className="text-sm text-gray-400">
+              Already have an account?{" "}
+              <a
+                href="https://admin.contentsyndicate.net/signin"
+                className="text-accent font-semibold hover:underline"
+              >
+                Sign in
+              </a>
+            </span>
           </div>
         </div>
 
-        {/* Form card */}
-        <div className="bg-white rounded-3xl border border-zinc-200 shadow-xl overflow-hidden">
-          {/* Section header */}
-          <div className="bg-dark px-8 py-6">
-            <h2 className="text-xl font-bold text-white font-display">{stepTitles[step - 1]}</h2>
-            <p className="text-sm text-gray-400 mt-1">
-              Step {step} of {STEPS.length}
+        <div className="mx-auto max-w-5xl px-6 py-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-10 text-center"
+          >
+            <h1 className="text-3xl lg:text-4xl font-bold tracking-tight font-display text-dark mb-3">
+              Create your Free News Releases Account
+            </h1>
+            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+              Register now to start distributing press releases to targeted audiences around the
+              globe. There is no charge to register an account. You pay only for the services you
+              choose.
             </p>
+            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed mt-3">
+              Content Syndicate is the industry's premier, full-service press release distribution
+              newswire. Our global reach includes broadcast and online media outlets, social media
+              sites, industry trade publications, leading blogs and industry influencers.
+            </p>
+          </motion.div>
+
+          {/* Step progress */}
+          <div className="mb-10">
+            <div className="flex items-center justify-between relative">
+              {/* connector line */}
+              <div className="absolute top-5 left-0 right-0 h-0.5 bg-zinc-200 -z-10" />
+              <div
+                className="absolute top-5 left-0 h-0.5 bg-accent -z-10 transition-all duration-500"
+                style={{ width: `${((step - 1) / (STEPS.length - 1)) * 100}%` }}
+              />
+              {STEPS.map((s) => {
+                const done = step > s.id;
+                const active = step === s.id;
+                return (
+                  <div key={s.id} className="flex flex-col items-center gap-2">
+                    <div
+                      className={`flex h-10 w-10 items-center justify-center rounded-full border-2 text-sm font-bold transition-all duration-300 ${
+                        done
+                          ? "bg-accent border-accent text-dark"
+                          : active
+                            ? "bg-dark border-dark text-white"
+                            : "bg-white border-zinc-300 text-gray-400"
+                      }`}
+                    >
+                      {done ? <CheckCircle2 size={18} /> : s.id}
+                    </div>
+                    <span
+                      className={`text-xs font-semibold hidden sm:block transition-colors ${active ? "text-dark" : done ? "text-accent" : "text-gray-400"}`}
+                    >
+                      {s.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          <form onSubmit={handleSubmit}>
-            <div className="px-8 py-8">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={step}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.25 }}
-                >
-                  {step === 1 && (
-                    <StepCompanyInfo
-                      data={company}
-                      onChange={(d) => setCompany((p) => ({ ...p, ...d }))}
-                    />
-                  )}
-                  {step === 2 && (
-                    <StepAdditionalInfo
-                      data={additional}
-                      onChange={(d) => setAdditional((p) => ({ ...p, ...d }))}
-                    />
-                  )}
-                  {step === 3 && (
-                    <StepPrimaryContact
-                      data={primary}
-                      onChange={(d) => setPrimary((p) => ({ ...p, ...d }))}
-                      passwordError={passwordError}
-                    />
-                  )}
-                  {step === 4 && (
-                    <StepBillingContact
-                      data={billing}
-                      onChange={(d) => setBilling((p) => ({ ...p, ...d }))}
-                    />
-                  )}
-                  {step === 5 && (
-                    <StepTerms
-                      accepted={termsAccepted}
-                      onAccept={setTermsAccepted}
-                      loading={loading}
-                    />
-                  )}
-                </motion.div>
-              </AnimatePresence>
+          {/* Form card */}
+          <div className="bg-white rounded-3xl border border-zinc-200 shadow-xl overflow-hidden">
+            {/* Section header */}
+            <div className="bg-dark px-8 py-6">
+              <h2 className="text-xl font-bold text-white font-display">{stepTitles[step - 1]}</h2>
+              <p className="text-sm text-gray-400 mt-1">
+                Step {step} of {STEPS.length}
+              </p>
             </div>
 
-            {/* Navigation buttons */}
-            {step < 5 && (
-              <div className="flex items-center justify-between px-8 pb-8">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setStep((s) => s - 1);
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  disabled={step === 1}
-                  className="flex items-center gap-2 px-6 py-3 rounded-xl border border-zinc-200 text-gray-500 font-semibold hover:border-accent hover:text-accent transition-all disabled:opacity-30 disabled:cursor-not-allowed text-sm"
-                >
-                  <ArrowLeft size={16} /> Back
-                </button>
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  className="flex items-center gap-2 px-8 py-3 rounded-xl bg-accent text-dark font-bold hover:bg-accent/90 transition-all shadow-lg shadow-accent/20 text-sm"
-                >
-                  Continue <ArrowRight size={16} />
-                </button>
+            <form onSubmit={handleSubmit}>
+              <div className="px-8 py-8">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={step}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    {step === 1 && (
+                      <StepCompanyInfo
+                        data={company}
+                        onChange={(d) => setCompany((p) => ({ ...p, ...d }))}
+                      />
+                    )}
+                    {step === 2 && (
+                      <StepAdditionalInfo
+                        data={additional}
+                        onChange={(d) => setAdditional((p) => ({ ...p, ...d }))}
+                      />
+                    )}
+                    {step === 3 && (
+                      <StepPrimaryContact
+                        data={primary}
+                        onChange={(d) => setPrimary((p) => ({ ...p, ...d }))}
+                        passwordError={passwordError}
+                      />
+                    )}
+                    {step === 4 && (
+                      <StepBillingContact
+                        data={billing}
+                        onChange={(d) => setBilling((p) => ({ ...p, ...d }))}
+                      />
+                    )}
+                    {step === 5 && (
+                      <StepTerms
+                        accepted={termsAccepted}
+                        onAccept={setTermsAccepted}
+                        loading={loading}
+                      />
+                    )}
+                  </motion.div>
+                </AnimatePresence>
               </div>
-            )}
-            {step === 5 && (
-              <div className="px-8 pb-8">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setStep(4);
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  className="flex items-center gap-2 px-6 py-3 rounded-xl border border-zinc-200 text-gray-500 font-semibold hover:border-accent hover:text-accent transition-all text-sm mb-6"
-                >
-                  <ArrowLeft size={16} /> Back
-                </button>
-              </div>
-            )}
-          </form>
-        </div>
 
-        <p className="mt-6 text-center text-xs text-gray-400">
-          By creating an account you agree to our{" "}
-          <Link to="/terms" className="hover:text-accent underline">
-            Terms
-          </Link>
-          {" & "}
-          <Link to="/privacy" className="hover:text-accent underline">
-            Privacy Policy
-          </Link>
-        </p>
+              {/* Navigation buttons */}
+              {step < 5 && (
+                <div className="flex items-center justify-between px-8 pb-8">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setStep((s) => s - 1);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    disabled={step === 1}
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl border border-zinc-200 text-gray-500 font-semibold hover:border-accent hover:text-accent transition-all disabled:opacity-30 disabled:cursor-not-allowed text-sm"
+                  >
+                    <ArrowLeft size={16} /> Back
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleNext}
+                    className="flex items-center gap-2 px-8 py-3 rounded-xl bg-accent text-dark font-bold hover:bg-accent/90 transition-all shadow-lg shadow-accent/20 text-sm"
+                  >
+                    Continue <ArrowRight size={16} />
+                  </button>
+                </div>
+              )}
+              {step === 5 && (
+                <div className="px-8 pb-8">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setStep(4);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl border border-zinc-200 text-gray-500 font-semibold hover:border-accent hover:text-accent transition-all text-sm mb-6"
+                  >
+                    <ArrowLeft size={16} /> Back
+                  </button>
+                </div>
+              )}
+            </form>
+          </div>
+
+          <p className="mt-6 text-center text-xs text-gray-400">
+            By creating an account you agree to our{" "}
+            <Link to="/terms" className="hover:text-accent underline">
+              Terms
+            </Link>
+            {" & "}
+            <Link to="/privacy" className="hover:text-accent underline">
+              Privacy Policy
+            </Link>
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

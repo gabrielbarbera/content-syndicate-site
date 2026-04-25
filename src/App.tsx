@@ -11,7 +11,6 @@ import TermsPage from "./pages/TermsPage";
 import SolutionsPage from "./pages/SolutionsPage";
 import BeSpokePage from "./pages/BeSpokePage";
 import EditorialGuidelinesPage from "./pages/EditorialGuidelinesPage";
-import AffiliatePage from "./pages/AffiliatePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -32,7 +31,6 @@ export default function App() {
           <Route path="solutions" element={<SolutionsPage />} />
           <Route path="bespoke" element={<BeSpokePage />} />
           <Route path="editorial-guidelines" element={<EditorialGuidelinesPage />} />
-          <Route path="affiliate" element={<AffiliatePage />} />
         </Route>
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />

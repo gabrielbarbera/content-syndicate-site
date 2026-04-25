@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Zap, Shield, Globe, Users, BarChart3, Headphones, ArrowRight } from "lucide-react";
 import { PageHeader } from "../components/layout/PageHeader";
 import FinalCTASection from "../components/sections/FinalCTASection";
+import SEO from "../components/SEO";
 
 const FEATURES = [
   {
@@ -45,6 +46,7 @@ const FEATURES = [
 export default function AboutPage() {
   return (
     <>
+      <SEO />
       <PageHeader
         title="About Content Syndicate"
         subtitle="Discover the power behind premier press distribution"

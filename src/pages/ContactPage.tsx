@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { PageHeader } from "../components/layout/PageHeader";
 import { ContactForm } from "../components/forms/ContactForm";
+import SEO from "../components/SEO";
 
 const CONTACT_INFO = [
   {
@@ -27,6 +28,7 @@ const CONTACT_INFO = [
 export default function ContactPage() {
   return (
     <>
+      <SEO />
       <PageHeader
         title="Contact Us"
         subtitle="We'd love to hear from you"

@@ -1,9 +1,11 @@
 import { PageHeader } from "../components/layout/PageHeader";
 import privacyContent from "../content/privacy-policy.html?raw";
+import SEO from "../components/SEO";
 
 export default function PrivacyPage() {
   return (
     <>
+      <SEO />
       <PageHeader title="Privacy Policy" overline="Legal" />
 
       <section className="bg-white py-16 lg:py-20 border-b border-zinc-100">

@@ -194,6 +194,8 @@ function Footer() {
                   { label: "Newsroom", href: "/newsroom" },
                   { label: "Pricing", href: "/pricing" },
                   { label: "Editorial Guidelines", href: "/editorial-guidelines" },
+                  { label: "About Us", href: "/about" },
+                  { label: "Writing Tips", href: "/writing-tips" },
                 ].map((item) => (
                   <li key={item.href}>
                     <Link
@@ -257,18 +259,6 @@ function Footer() {
                     className="group inline-flex items-center gap-2 text-gray-400 transition-all hover:text-accent"
                   >
                     Contact Us
-                    <ArrowUpRight
-                      size={14}
-                      className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
-                    />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/affiliate"
-                    className="group inline-flex items-center gap-2 text-gray-400 transition-all hover:text-accent"
-                  >
-                    Join Affiliate Program
                     <ArrowUpRight
                       size={14}
                       className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"

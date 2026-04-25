@@ -1,21 +1,15 @@
-# robots.txt - Production Domain Configuration
-# For production domain: contentsyndicate.net
+# Content Syndicate robots.txt
+# Production Domain Configuration
 
-# Allow all crawlers on production
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Disallow specific paths if needed
-# Disallow: /admin/
-# Disallow: /api/
+# Disallow admin and account areas
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
 
 # Sitemap location
 Sitemap: https://contentsyndicate.net/sitemap.xml
-
-# Crawl delay (optional)
-# Crawl-delay: 1
-
-# Note: Preview domains (*.vercel.app) are blocked via:
-# - X-Robots-Tag HTTP header (see vercel.json)
-# - Meta robots tag injected via inline script (see index.html)
-# - React component backup (see RoboMetaTag.tsx)

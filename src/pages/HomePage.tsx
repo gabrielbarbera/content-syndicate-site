@@ -7,10 +7,12 @@ import PricingSection from "../components/sections/PricingSection";
 import FinalCTASection from "../components/sections/FinalCTASection";
 import FAQSection from "../components/sections/FAQSection";
 import AboutSection from "../components/sections/AboutSection";
+import SEO from "../components/SEO";
 
 export default function HomePage() {
   return (
     <>
+      <SEO />
       <HeroSection />
       <StatsSection />
       <ComparisonSection />

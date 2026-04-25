@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { PageHeader } from "../components/layout/PageHeader";
+import SEO from "../components/SEO";
 
 export default function NotFoundPage() {
   return (
     <>
+      <SEO
+        title="404 - Page Not Found"
+        description="The page you're looking for doesn't exist or has been moved."
+        noindex
+      />
       <PageHeader title="Page Not Found" overline="404" />
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-xl px-6 text-center">

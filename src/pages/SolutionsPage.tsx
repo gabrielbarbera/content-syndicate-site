@@ -12,12 +12,11 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { PageHeader } from "../components/layout/PageHeader";
 import FinalCTASection from "../components/sections/FinalCTASection";
-
-type Tab = "individuals" | "businesses";
+import SEO from "../components/SEO";
 
 const INDIVIDUALS_SEGMENTS = [
   {
@@ -116,12 +115,13 @@ const BUSINESSES_ADVANTAGE = [
 ];
 
 export default function SolutionsPage() {
-  const [activeTab, setActiveTab] = useState<Tab>("individuals");
+  const [activeTab, setActiveTab] = useState<"individuals" | "businesses">("individuals");
 
   const isIndividuals = activeTab === "individuals";
 
   return (
     <>
+      <SEO />
       <PageHeader
         title="Solutions"
         subtitle="Distribution strategies built for your unique professional goals"
