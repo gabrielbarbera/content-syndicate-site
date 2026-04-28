@@ -21,8 +21,8 @@ Content Syndicate is a press release distribution platform serving public compan
 
 ## Partners
 
-- BlockchainWire: https://blockchainwire.io
-- CryptoBell.Live: https://cryptobell.live
+- BlockchainWire: https://www.blockchainwire.io
+- CryptoBell.Live: https://www.cryptobell.live
 
 ## Audiences
 

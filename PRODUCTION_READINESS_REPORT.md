@@ -145,7 +145,7 @@ All critical checks passed. The site is production-ready with no blocking issues
 
 ### Partner Sites
 
-- ✅ BlockchainWire: `https://blockchainwire.io/`
+- ✅ BlockchainWire: `https://www.blockchainwire.io/`
 - ✅ CryptoBell.Live: `https://www.cryptobell.live/`
 
 ### Contact

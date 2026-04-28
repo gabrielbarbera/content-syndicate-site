@@ -34,7 +34,7 @@ function TopBar() {
           </span>
           <div className="flex items-center gap-3">
             <a
-              href="https://blockchainwire.io/"
+              href="https://www.blockchainwire.io/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-[0.75rem] font-semibold text-white/90 hover:text-accent transition-colors duration-200"
@@ -211,7 +211,7 @@ function Footer() {
                   </li>
                 ))}
                 {[
-                  { label: "BlockchainWire", href: "https://blockchainwire.io/" },
+                  { label: "BlockchainWire", href: "https://www.blockchainwire.io/" },
                   { label: "CryptoBell.Live", href: "https://www.cryptobell.live/" },
                 ].map((item) => (
                   <li key={item.href}>

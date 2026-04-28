@@ -45,7 +45,7 @@
 | Newsroom             | `/newsroom`                    | ✅ Valid    |
 | Pricing              | `/pricing`                     | ✅ Valid    |
 | Editorial Guidelines | `/editorial-guidelines`        | ✅ Valid    |
-| BlockchainWire       | `https://blockchainwire.io/`   | ✅ External |
+| BlockchainWire       | `https://www.blockchainwire.io/`   | ✅ External |
 | CryptoBell.Live      | `https://www.cryptobell.live/` | ✅ External |
 
 ---
@@ -74,7 +74,7 @@
 
 ### Partner Sites
 
-- ✅ BlockchainWire: `https://blockchainwire.io/`
+- ✅ BlockchainWire: `https://www.blockchainwire.io/`
 - ✅ CryptoBell.Live: `https://www.cryptobell.live/`
 
 ### Contact
