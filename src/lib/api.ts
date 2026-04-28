@@ -7,7 +7,7 @@ import { subDays, subHours, isWithinInterval } from "date-fns";
 // Use relative path in dev (proxied by Vite), full URL in production
 const RSS_FEED_URL = import.meta.env.DEV
   ? "/industry-feed"
-  : "https://www.globenewswire.com/RssFeed/subjectcode/72-Press%20Releases/feedTitle/GlobeNewswire%20-%20Press%20Releases";
+  : "https://newapi.contentsyndicate.net/feed-rss.xml";
 const CACHE_KEY = "rss-feed";
 
 export async function fetchRssFeed(): Promise<PressRelease[]> {

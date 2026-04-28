@@ -19,13 +19,9 @@ export default defineConfig(({ mode }) => {
       hmr: process.env.DISABLE_HMR !== "true",
       proxy: {
         "/industry-feed": {
-          target: "https://www.globenewswire.com",
+          target: "https://newapi.contentsyndicate.net",
           changeOrigin: true,
-          rewrite: (path) =>
-            path.replace(
-              /^\/industry-feed/,
-              "/RssFeed/subjectcode/72-Press%20Releases/feedTitle/GlobeNewswire%20-%20Press%20Releases"
-            ),
+          rewrite: (path) => path.replace(/^\/industry-feed/, "/feed-rss.xml"),
         },
       },
     },
