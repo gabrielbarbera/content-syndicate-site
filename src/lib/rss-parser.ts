@@ -91,6 +91,59 @@ function extractLocation(_plainText: string): string | undefined {
   return undefined;
 }
 
+function cleanOrganizationName(value: string | undefined): string | undefined {
+  if (!value) return undefined;
+
+  const cleaned = value
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&#8217;/g, "'")
+    .replace(/&#8216;/g, "'")
+    .replace(/&#8220;/g, '"')
+    .replace(/&#8221;/g, '"')
+    .replace(/&#8211;/g, "–")
+    .replace(/&#8212;/g, "—")
+    .replace(/\s+/g, " ")
+    .replace(/^[\s,;:–—-]+|[\s,;:–—-]+$/g, "")
+    .trim();
+
+  if (!cleaned || /^about\b/i.test(cleaned) || /^media contact\b/i.test(cleaned)) {
+    return undefined;
+  }
+
+  if (/^[\w.-]+\.[a-z]{2,}$/i.test(cleaned) || cleaned.includes("@")) {
+    return undefined;
+  }
+
+  return cleaned;
+}
+
+function extractFirstLinkedText(html: string): string | undefined {
+  const anchorMatch = html.match(/<a\b[^>]*>([\s\S]*?)<\/a>/i);
+  if (!anchorMatch) return undefined;
+
+  return cleanOrganizationName(stripHtml(anchorMatch[1]));
+}
+
+function extractOrganizationFromTitle(title: string): string | undefined {
+  const normalizedTitle = title.replace(/\s+/g, " ").trim();
+  const boundaryPattern =
+    /\s(?:Launches|Marks|Names|Provides|Executes|Appoints|Rebrands|Releases|Announces|Introduces|Unveils|Opens|Expands|Closes|Completes|Acquires|Partners|Highlights|Founder|Joins)\b/i;
+  const match = normalizedTitle.match(boundaryPattern);
+  let candidate = match ? normalizedTitle.slice(0, match.index).trim() : undefined;
+
+  const founderOfMatch = candidate?.match(/,\s*Founder of\s+(.+)$/i);
+  if (founderOfMatch) {
+    candidate = founderOfMatch[1];
+  }
+
+  return cleanOrganizationName(candidate?.replace(/^Author and Performer\s+/i, ""));
+}
+
+function extractOrganization(rawDescription: string, title: string): string | undefined {
+  return extractOrganizationFromTitle(title) || extractFirstLinkedText(rawDescription);
+}
+
 function normalizeCategories(
   category:
     | string
@@ -129,16 +182,20 @@ export function parseRssFeed(xmlString: string): RssFeed {
     const pressReleases: PressRelease[] = items.map((item): PressRelease => {
       const rawDescription = item.description || "";
       const plainText = stripHtml(rawDescription);
+      const rawContent = item["content:encoded"];
+      const fullContent = rawContent || rawDescription || plainText;
       const location = extractLocation(plainText);
       const categories = normalizeCategories(item.category);
       const organization =
-        item["dc:contributor"] || (categories.length > 0 ? categories[0] : undefined);
+        cleanOrganizationName(item["dc:contributor"]) ||
+        cleanOrganizationName(item["dc:publisher"]) ||
+        extractOrganization(rawDescription, item.title);
 
       return {
         title: item.title,
         link: item.link,
         description: truncateText(plainText),
-        content: item["content:encoded"],
+        content: fullContent,
         pubDate: item.pubDate,
         category: categories,
         guid: item.guid,
