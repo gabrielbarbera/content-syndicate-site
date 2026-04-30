@@ -235,7 +235,7 @@
 }
 
 .prose-custom img {
-  @apply my-10 h-auto w-full max-w-full rounded-md border border-white/[0.08] bg-white/[0.03] shadow-[0_18px_60px_-36px_rgba(0,0,0,0.9)];
+  @apply my-10 h-auto w-full max-w-full rounded-md border border-white/[0.08] bg-white p-4 shadow-[0_18px_60px_-36px_rgba(0,0,0,0.9)];
   display: block;
 }
 
