@@ -72,9 +72,8 @@ export default function PressReleasePage() {
   }
 
   const pubDate = new Date(release.pubDate);
-  const releaseContent = release.content || "";
-
-  const hasFullContent = releaseContent.length > 100;
+  const releaseContent = release.content || release.description || "";
+  const hasFullContent = releaseContent.length > 150;
 
   return (
     <>

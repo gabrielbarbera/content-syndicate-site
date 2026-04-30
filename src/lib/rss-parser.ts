@@ -86,11 +86,8 @@ function truncateText(text: string, maxLength: number = 280): string {
   return truncated.slice(0, lastSpace) + "…";
 }
 
-function extractLocation(plainText: string): string | undefined {
-  const locationMatch = plainText.match(/^([A-Z][a-zA-Z\s,]+?)(?:\s*[–—•,]|\s{2,})/);
-  if (locationMatch && locationMatch[1].trim().length > 2 && locationMatch[1].trim().length < 60) {
-    return locationMatch[1].trim();
-  }
+function extractLocation(_plainText: string): string | undefined {
+  // Location extraction disabled - not reliable for RSS format
   return undefined;
 }
 
