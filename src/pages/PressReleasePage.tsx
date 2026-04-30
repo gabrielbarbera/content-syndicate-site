@@ -72,6 +72,9 @@ export default function PressReleasePage() {
   }
 
   const pubDate = new Date(release.pubDate);
+  const releaseContent = release.content || "";
+
+  const hasFullContent = releaseContent.length > 100;
 
   return (
     <>
@@ -85,7 +88,7 @@ export default function PressReleasePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mx-auto max-w-3xl"
+            className="mx-auto max-w-4xl"
           >
             <Link
               to="/newsroom"
@@ -95,8 +98,8 @@ export default function PressReleasePage() {
               <span>Back to Newsroom</span>
             </Link>
 
-            <article className="rounded-2xl border border-white/[0.07] bg-[#0d1420] p-8 lg:p-12">
-              <header className="mb-8">
+            <article className="rounded-2xl border border-white/[0.07] bg-[#0d1420] overflow-hidden">
+              <header className="p-8 lg:p-12 pb-0">
                 <div className="mb-4 flex flex-wrap items-center gap-4 text-[0.6875rem] text-gray-700">
                   <div className="flex items-center gap-1.5">
                     <Calendar size={11} className="text-accent/60" />
@@ -129,56 +132,55 @@ export default function PressReleasePage() {
                 </h1>
               </header>
 
-              {release.description && (
-                <p className="mb-8 text-lg text-gray-400 leading-relaxed">{release.description}</p>
+              {hasFullContent ? (
+                <div className="p-8 lg:p-12 pt-6">
+                  <div
+                    className="prose-custom"
+                    dangerouslySetInnerHTML={{ __html: releaseContent }}
+                  />
+                </div>
+              ) : (
+                <div className="p-8 lg:p-12">
+                  {release.description && (
+                    <p className="text-lg text-gray-400 leading-relaxed mb-6">
+                      {release.description}
+                    </p>
+                  )}
+
+                  <a
+                    href={release.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[0.875rem] font-semibold text-accent hover:text-accent/80 transition-colors"
+                  >
+                    <span>Read Original Release</span>
+                    <Share2 size={14} />
+                  </a>
+                </div>
               )}
 
-              {release.content && (
-                <div
-                  className="space-y-6 text-[0.9375rem] text-gray-400 leading-relaxed
-                    [&_h2]:text-white [&_h2]:font-bold [&_h2]:text-xl [&_h2]:mt-10 [&_h2]:mb-4
-                    [&_h3]:text-white [&_h3]:font-semibold [&_h3]:text-lg [&_h3]:mt-8 [&_h3]:mb-3
-                    [&_h4]:text-white [&_h4]:font-medium [&_h4]:text-base [&_h4]:mt-6 [&_h4]:mb-2
-                    [&_p]:mb-5 [&_p]:text-gray-400
-                    [&_a]:text-accent [&_a:hover:text-accent/80 [&_a]:underline [&_a]:underline-offset-2
-                    [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2
-                    [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:space-y-2
-                    [&_li]:pl-2
-                    [&_blockquote]:border-l-2 [&_blockquote]:border-accent/50 [&_blockquote]:pl-5 [&_blockquote]:py-1 [&_blockquote]:italic [&_blockquote]:text-gray-500
-                    [&_strong]:text-white [&_strong]:font-semibold
-                    [&_em]:text-gray-300
-                    [&_code]:bg-white/[0.06] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-accent [&_code]:font-mono [&_code]:text-sm
-                    [&_pre]:bg-black/30 [&_pre]:p-5 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:mb-6
-                    [&_pre_code]:text-gray-300 [&_pre_code]:font-mono [&_pre_code]:text-sm
-                    [&_hr]:border-white/[0.1] [&_hr]:my-8
-                    [&_table]:w-full [&_table]:mb-6 [&_table]:border-collapse
-                    [&_th]:text-left [&_th]:text-white [&_th]:font-semibold [&_th]:p-3 [&_th]:bg-white/[0.04] [&_th]:border [&_th]:border-white/[0.1]
-                    [&_td]:p-3 [&_td]:border [&_td]:border-white/[0.1]
-                    [&_tr:nth-child(even)_td]:bg-white/[0.02]]"
-                  dangerouslySetInnerHTML={{ __html: release.content }}
-                />
-              )}
+              <footer className="p-8 lg:p-12 pt-0 mt-[-2rem]">
+                <div className="pt-8 border-t border-white/[0.07] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <a
+                    href={release.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[0.875rem] font-semibold text-accent hover:text-accent/80 transition-colors"
+                  >
+                    <span>View Original Source</span>
+                    <Share2 size={14} />
+                  </a>
 
-              <footer className="mt-10 pt-8 border-t border-white/[0.07] flex items-center justify-between">
-                <a
-                  href={release.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[0.875rem] font-semibold text-accent hover:text-accent/80 transition-colors"
-                >
-                  <span>Read Original Release</span>
-                  <Share2 size={14} />
-                </a>
-
-                <div className="flex items-center gap-3">
-                  {release.category?.map((cat) => (
-                    <span
-                      key={cat}
-                      className="text-[0.625rem] font-semibold uppercase tracking-[0.1em] text-gray-600 bg-white/[0.04] px-2 py-1 rounded"
-                    >
-                      {cat}
-                    </span>
-                  ))}
+                  <div className="flex flex-wrap items-center gap-3">
+                    {release.category?.map((cat) => (
+                      <span
+                        key={cat}
+                        className="text-[0.625rem] font-semibold uppercase tracking-[0.1em] text-gray-600 bg-white/[0.04] px-2 py-1 rounded"
+                      >
+                        {cat}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </footer>
             </article>
