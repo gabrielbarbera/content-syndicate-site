@@ -80,13 +80,13 @@ All requested SEO features have been implemented with corrections to use actual 
 | `logo.height`                    | 128                                        | ✅ Match     |                                             |
 | `image`                          | /og-image.png                              | ⚠️ Corrected | `/images/og-image.png`                      |
 | `description`                    | High-authority press release...            | ✅ Match     |                                             |
-| `email`                          | sales@contentsyndicate.net                 | ✅ Match     |                                             |
+| `email`                          | support@contentsyndicate.net                 | ✅ Match     |                                             |
 | `sameAs[0]`                      | facebook.com/contentsyndicate              | ⚠️ Corrected | Actual: `/share/1CULekGk3q/`                |
 | `sameAs[1]`                      | instagram.com/contentsyndicate             | ⚠️ Corrected | Actual: `/content_syndicate_news/`          |
 | `sameAs[2]`                      | twitter.com/ContentSyndicate               | ✅ Added     | Was missing                                 |
 | `sameAs[3]`                      | linkedin.com/company/content-syndicate     | ✅ Added     | Was missing                                 |
 | `contactPoint.contactType`       | sales                                      | ✅ Match     |                                             |
-| `contactPoint.email`             | sales@contentsyndicate.net                 | ✅ Match     |                                             |
+| `contactPoint.email`             | support@contentsyndicate.net                 | ✅ Match     |                                             |
 | `contactPoint.url`               | /contact                                   | ✅ Match     |                                             |
 | `contactPoint.availableLanguage` | English                                    | ✅ Match     |                                             |
 | `knowsAbout`                     | [10 items]                                 | ✅ Match     | All present                                 |

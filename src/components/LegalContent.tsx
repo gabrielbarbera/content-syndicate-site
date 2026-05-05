@@ -15,12 +15,12 @@ export const ContactContent = () => {
           <p className="text-zinc-500 text-sm font-semibold">203-450-6033</p>
         </a>
         <a 
-          href="mailto:sales@contentsyndicate.net"
+          href="mailto:support@contentsyndicate.net"
           className="p-6 rounded-2xl bg-zinc-50 border border-zinc-100 hover:border-accent/50 hover:shadow-lg transition-all group"
         >
           <Mail className="w-6 h-6 text-accent mb-4 group-hover:scale-110 transition-transform" />
           <h4 className="font-bold text-dark mb-1">Email Us</h4>
-          <p className="text-zinc-500 text-sm font-semibold">sales@contentsyndicate.net</p>
+          <p className="text-zinc-500 text-sm font-semibold">support@contentsyndicate.net</p>
         </a>
       </div>
 

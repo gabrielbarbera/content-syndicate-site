@@ -150,7 +150,7 @@ All critical checks passed. The site is production-ready with no blocking issues
 
 ### Contact
 
-- ✅ Email: `sales@contentsyndicate.net`
+- ✅ Email: `support@contentsyndicate.net`
 - ✅ RSS Feed: `https://newapi.contentsyndicate.net/feed-rss.xml`
 
 ---

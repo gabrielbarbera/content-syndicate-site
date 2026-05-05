@@ -33,7 +33,7 @@ Content Syndicate is a press release distribution platform serving public compan
 
 ## Contact
 
-- Sales: sales@contentsyndicate.net
+- Sales: support@contentsyndicate.net
 - Contact page: https://contentsyndicate.net/contact
 - Get started: https://admin.contentsyndicate.net/signup
 - Log in: https://admin.contentsyndicate.net/signin

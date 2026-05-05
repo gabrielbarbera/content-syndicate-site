@@ -48,7 +48,7 @@ export const SEO_CONFIG: Record<string, SEOConfig> = {
   "/contact": {
     title: "Contact Us | Content Syndicate",
     description:
-      "Contact Content Syndicate for package guidance, BeSpoke campaign planning, and press release partnership inquiries. Email sales@contentsyndicate.net.",
+      "Contact Content Syndicate for package guidance, BeSpoke campaign planning, and press release partnership inquiries. Email support@contentsyndicate.net.",
     canonical: "https://contentsyndicate.net/contact",
     ogImage: "https://contentsyndicate.net/opengraph.png",
   },

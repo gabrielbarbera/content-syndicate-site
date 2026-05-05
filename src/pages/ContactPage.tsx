@@ -14,8 +14,8 @@ const CONTACT_INFO = [
   {
     icon: Mail,
     label: "Email",
-    value: "sales@contentsyndicate.net",
-    href: "mailto:sales@contentsyndicate.net",
+    value: "support@contentsyndicate.net",
+    href: "mailto:support@contentsyndicate.net",
   },
   {
     icon: MapPin,

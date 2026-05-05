@@ -75,7 +75,7 @@ All requested SEO features have been successfully implemented and verified. Buil
   },
   "image": "https://contentsyndicate.net/images/og-image.png", ⚡ **Corrected path**
   "description": "Full description",
-  "email": "sales@contentsyndicate.net",
+  "email": "support@contentsyndicate.net",
   "sameAs": [
     "https://www.facebook.com/share/1CULekGk3q/", ⚡ **Actual profile**
     "https://www.instagram.com/content_syndicate_news/", ⚡ **Actual profile**
@@ -85,7 +85,7 @@ All requested SEO features have been successfully implemented and verified. Buil
   "contactPoint": { ✅ **Complete**
     "@type": "ContactPoint",
     "contactType": "sales",
-    "email": "sales@contentsyndicate.net",
+    "email": "support@contentsyndicate.net",
     "url": "https://contentsyndicate.net/contact",
     "availableLanguage": ["English"]
   },

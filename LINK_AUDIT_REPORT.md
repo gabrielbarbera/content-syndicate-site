@@ -79,7 +79,7 @@
 
 ### Contact
 
-- ✅ Email: `sales@contentsyndicate.net`
+- ✅ Email: `support@contentsyndicate.net`
 - ✅ Email (BeSpoke): `sales@blockchainwire.io`
 - ✅ Email (Press): `press@contentsyndicate.net`
 

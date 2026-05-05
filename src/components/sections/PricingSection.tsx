@@ -184,8 +184,8 @@ const PricingSection = ({ onContactClick }: { onContactClick: () => void }) => (
           <p className="text-zinc-400 text-lg">
             Our BeSpoke™ solutions are tailored to your goals, explore our retainer options or
             choose a flexible pay-as-you-go plan. Contact{" "}
-            <a className="font-bold ml-2 text-accent" href="mailto:sales@contentsyndicate.net">
-              sales@contentsyndicate.net
+            <a className="font-bold ml-2 text-accent" href="mailto:support@contentsyndicate.net">
+              support@contentsyndicate.net
             </a>
           </p>
         </div>

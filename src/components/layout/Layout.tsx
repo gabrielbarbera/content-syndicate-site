@@ -57,11 +57,11 @@ function TopBar() {
 
         <div className="flex items-center gap-4">
           <a
-            href="mailto:sales@contentsyndicate.net"
+            href="mailto:support@contentsyndicate.net"
             className="hidden sm:flex items-center gap-1.5 text-[0.75rem] font-medium text-white/90 hover:text-white transition-colors duration-200"
           >
             <Mail size={12} />
-            sales@contentsyndicate.net
+            support@contentsyndicate.net
           </a>
           <div className="h-3 w-px bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-2.5">
@@ -114,7 +114,7 @@ function Footer() {
       label: "Instagram",
     },
     { icon: Rss, href: "https://newapi.contentsyndicate.net/feed-rss.xml", label: "RSS Feed" },
-    { icon: Mail, href: "mailto:sales@contentsyndicate.net", label: "Email" },
+    { icon: Mail, href: "mailto:support@contentsyndicate.net", label: "Email" },
   ];
 
   return (
