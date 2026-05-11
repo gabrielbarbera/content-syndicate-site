@@ -15,6 +15,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import PressReleasePage from "./pages/PressReleasePage";
+import AuthorsLaunchpadPage from "./pages/AuthorsLaunchpadPage";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="terms" element={<TermsPage />} />
           <Route path="solutions" element={<SolutionsPage />} />
           <Route path="bespoke" element={<BeSpokePage />} />
+          <Route path="authors-launchpad" element={<AuthorsLaunchpadPage />} />
           <Route path="editorial-guidelines" element={<EditorialGuidelinesPage />} />
           <Route path="press-release/:slug" element={<PressReleasePage />} />
         </Route>

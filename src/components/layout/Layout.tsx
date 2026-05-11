@@ -191,6 +191,7 @@ function Footer() {
                 {[
                   { label: "Solutions", href: "/solutions" },
                   { label: "BeSpoke™", href: "/bespoke" },
+                  { label: "Author's Launchpad", href: "/authors-launchpad" },
                   { label: "Newsroom", href: "/newsroom" },
                   { label: "Pricing", href: "/pricing" },
                   { label: "Editorial Guidelines", href: "/editorial-guidelines" },

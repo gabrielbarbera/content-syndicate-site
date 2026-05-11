@@ -24,6 +24,8 @@ const INDIVIDUALS_SEGMENTS = [
     title: "Artists & Authors",
     description:
       'Turn gallery openings or book launches into national cultural events with "As Seen On" credentials that increase the appraisal value of your work.',
+    link: "/authors-launchpad",
+    linkText: "Learn More",
   },
   {
     icon: ShoppingBag,
@@ -202,7 +204,21 @@ export default function SolutionsPage() {
                       <h3 className="mb-3 text-xl font-bold text-dark group-hover:text-accent transition-colors">
                         {seg.title}
                       </h3>
-                      <p className="text-gray-700 leading-relaxed">{seg.description}</p>
+                      <p className="text-gray-700 leading-relaxed mb-6">{seg.description}</p>
+                      {"link" in seg && "linkText" in seg && (
+                        <motion.a
+                          href={seg.link}
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="inline-flex items-center gap-2 text-accent font-semibold hover:text-dark transition-colors group/btn"
+                        >
+                          {seg.linkText}
+                          <ArrowRight
+                            size={16}
+                            className="group-hover/btn:translate-x-1 transition-transform"
+                          />
+                        </motion.a>
+                      )}
                     </motion.div>
                   ))}
                 </div>
