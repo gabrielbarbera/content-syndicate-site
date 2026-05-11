@@ -1,151 +1,133 @@
-import { useState, FormEvent } from "react";
-import { motion } from "motion/react";
-import FormInput from "./FormInput";
-import { CheckCircle } from "lucide-react";
+import { useEffect } from "react";
 
-interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  title: string;
-  company: string;
-  companyType: string;
-  country: string;
-  state: string;
-  comments: string;
-  privacy: boolean;
+declare global {
+  interface Window {
+    Nutsheller?: (...args: unknown[]) => void;
+  }
+}
+
+const NUTSHELL_FORM_ID = "CarbIj";
+const NUTSHELL_INSTANCE_ID = "357174";
+const NUTSHELL_TARGET_ID = `nutshell-form-${NUTSHELL_FORM_ID}`;
+
+function convertCountryRegionToSelector(root: HTMLElement) {
+  const fieldsets = Array.from(root.querySelectorAll("fieldset"));
+  const countryFieldset = fieldsets.find((fieldset) => {
+    const legend = fieldset.querySelector("legend");
+    return legend?.textContent?.trim().toLowerCase().includes("country/region");
+  });
+
+  if (!countryFieldset || countryFieldset.dataset.countrySelectorReady === "true") {
+    return;
+  }
+
+  const optionLabels = Array.from(countryFieldset.querySelectorAll("label")).filter((label) =>
+    label.querySelector('input[type="checkbox"]')
+  );
+
+  if (optionLabels.length === 0) {
+    return;
+  }
+
+  const select = document.createElement("select");
+  select.id = "nutshell-country-selector";
+  select.className = "nutshell-country-selector";
+
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  placeholder.textContent = "Select country/region";
+  select.appendChild(placeholder);
+
+  const checkboxes: HTMLInputElement[] = [];
+
+  optionLabels.forEach((label) => {
+    const checkbox = label.querySelector<HTMLInputElement>('input[type="checkbox"]');
+    if (!checkbox) return;
+
+    checkboxes.push(checkbox);
+
+    const option = document.createElement("option");
+    option.value = checkbox.value;
+    option.textContent = label.textContent?.trim() ?? "";
+    select.appendChild(option);
+  });
+
+  const selectedCheckbox = checkboxes.find((checkbox) => checkbox.checked);
+  if (selectedCheckbox) {
+    select.value = selectedCheckbox.value;
+  }
+
+  select.addEventListener("change", () => {
+    checkboxes.forEach((checkbox) => {
+      const shouldCheck = checkbox.value === select.value;
+      if (checkbox.checked !== shouldCheck) {
+        checkbox.checked = shouldCheck;
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+    });
+  });
+
+  const labelsContainer = optionLabels[0]?.parentElement;
+  if (labelsContainer) {
+    labelsContainer.insertBefore(select, optionLabels[0]);
+  } else {
+    countryFieldset.appendChild(select);
+  }
+
+  optionLabels.forEach((label) => {
+    label.style.display = "none";
+  });
+
+  countryFieldset.dataset.countrySelectorReady = "true";
 }
 
 export function ContactForm() {
-  const [formData, setFormData] = useState<FormData>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    title: "",
-    company: "",
-    companyType: "",
-    country: "",
-    state: "",
-    comments: "",
-    privacy: false,
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  useEffect(() => {
+    const w = window as Window & {
+      Nutsheller?: { (...args: unknown[]): void; q?: unknown[] };
+    };
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
-  };
+    w.Nutsheller =
+      w.Nutsheller ||
+      function nutshellQueue(...args: unknown[]) {
+        w.Nutsheller!.q = w.Nutsheller!.q || [];
+        w.Nutsheller!.q!.push(args);
+      };
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value, type } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
-    }));
-  };
+    w.Nutsheller("initForm", {
+      form: NUTSHELL_FORM_ID,
+      instance: NUTSHELL_INSTANCE_ID,
+      authToken: "",
+      target: NUTSHELL_TARGET_ID,
+    });
 
-  if (isSubmitted) {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="flex flex-col items-center justify-center rounded-xl border border-accent/30 bg-accent/5 p-12 text-center"
-      >
-        <CheckCircle className="mb-4 text-accent" size={64} />
-        <h3 className="mb-2 text-2xl font-semibold text-dark">Thank You!</h3>
-        <p className="text-gray-600">We've received your message and will get back to you soon.</p>
-      </motion.div>
-    );
-  }
+    const script = document.createElement("script");
+    script.type = "module";
+    script.src = "https://loader.nutshell.com/nutsheller-esm.js";
+    script.async = true;
+    script.dataset.nutshellLoader = "true";
+    document.body.appendChild(script);
 
-  return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <FormInput label="First Name" name="firstName" placeholder="John" required />
-        <FormInput label="Last Name" name="lastName" placeholder="Doe" required />
-      </div>
+    const target = document.getElementById(NUTSHELL_TARGET_ID);
+    let observer: MutationObserver | null = null;
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <FormInput
-          label="Email"
-          name="email"
-          type="email"
-          placeholder="john@example.com"
-          required
-        />
-        <FormInput label="Phone" name="phone" type="tel" placeholder="(201) 555-0123" />
-      </div>
+    if (target) {
+      observer = new MutationObserver(() => {
+        convertCountryRegionToSelector(target);
+      });
+      observer.observe(target, { childList: true, subtree: true });
+      convertCountryRegionToSelector(target);
+    }
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <FormInput label="Title" name="title" placeholder="Marketing Manager" />
-        <FormInput label="Company" name="company" placeholder="Acme Corp" />
-      </div>
+    return () => {
+      observer?.disconnect();
+      script.remove();
+      const targetNode = document.getElementById(NUTSHELL_TARGET_ID);
+      if (targetNode) {
+        targetNode.innerHTML = "";
+      }
+    };
+  }, []);
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <FormInput
-          label="Company Type"
-          name="companyType"
-          type="select"
-          placeholder="Select company type"
-          options={[
-            { value: "public", label: "Public" },
-            { value: "private", label: "Private" },
-          ]}
-        />
-        <FormInput
-          label="Country"
-          name="country"
-          type="select"
-          placeholder="Select country"
-          options={[
-            { value: "us", label: "United States" },
-            { value: "ca", label: "Canada" },
-            { value: "uk", label: "United Kingdom" },
-          ]}
-        />
-      </div>
-
-      <FormInput label="State/Province" name="state" placeholder="California" />
-
-      <FormInput
-        label="Comments"
-        name="comments"
-        type="textarea"
-        placeholder="How can we help you?"
-        required
-        rows={5}
-      />
-
-      <div className="flex items-start gap-3">
-        <input
-          type="checkbox"
-          id="privacy"
-          name="privacy"
-          checked={formData.privacy}
-          onChange={handleInputChange}
-          required
-          className="mt-1 h-4 w-4 rounded border-zinc-300 text-accent focus:ring-accent/20"
-        />
-        <label htmlFor="privacy" className="text-sm text-gray-600">
-          You agree to our{" "}
-          <a href="/privacy" className="text-accent hover:underline">
-            Privacy Policy
-          </a>
-          .
-        </label>
-      </div>
-
-      <button
-        type="submit"
-        className="w-full rounded-full bg-accent px-8 py-4 font-semibold text-dark shadow-lg shadow-accent/25 transition hover:scale-105 hover:shadow-accent/40"
-      >
-        Send Message
-      </button>
-    </form>
-  );
+  return <div id={NUTSHELL_TARGET_ID} className="nutshell-form-shell" />;
 }

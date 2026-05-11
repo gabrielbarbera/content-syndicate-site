@@ -360,3 +360,146 @@
 .prose a:hover {
   color: #7ea01a;
 }
+
+/* Contact form iframe shell */
+.nutshell-form-shell {
+  min-height: 700px;
+}
+
+.nutshell-form-shell iframe {
+  width: 100%;
+  min-height: 680px;
+  border: none;
+  border-radius: 1rem;
+  background-color: #ffffff;
+}
+
+/* Nutshell direct-DOM form styling */
+#nutshell-form-CarbIj #peanut-container {
+  border-radius: 1rem;
+  background: transparent;
+}
+
+#nutshell-form-CarbIj form[data-form-type="form"] {
+  color: #101828;
+  font-family: var(--font-sans);
+}
+
+#nutshell-form-CarbIj h1 {
+  margin: 0 0 1rem;
+  color: #101828;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+#nutshell-form-CarbIj label,
+#nutshell-form-CarbIj legend {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #101828;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+#nutshell-form-CarbIj input[type="text"],
+#nutshell-form-CarbIj input[type="email"],
+#nutshell-form-CarbIj input[type="tel"],
+#nutshell-form-CarbIj textarea,
+#nutshell-form-CarbIj select {
+  width: 100%;
+  border: 1px solid rgba(16, 24, 40, 0.16);
+  border-radius: 0.85rem;
+  background: #fff;
+  color: #101828;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#nutshell-form-CarbIj textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+#nutshell-form-CarbIj input[type="text"]:focus,
+#nutshell-form-CarbIj input[type="email"]:focus,
+#nutshell-form-CarbIj input[type="tel"]:focus,
+#nutshell-form-CarbIj textarea:focus,
+#nutshell-form-CarbIj select:focus {
+  outline: none;
+  border-color: #9bc621;
+  box-shadow: 0 0 0 4px rgba(155, 198, 33, 0.18);
+}
+
+#nutshell-form-CarbIj input[type="checkbox"],
+#nutshell-form-CarbIj input[type="radio"] {
+  accent-color: #9bc621;
+  margin-right: 0.55rem;
+}
+
+#nutshell-form-CarbIj fieldset {
+  border: 1px solid rgba(16, 24, 40, 0.1);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.7);
+  margin: 0.25rem 0 0.5rem;
+  padding: 0.8rem 1rem 0.9rem;
+}
+
+#nutshell-form-CarbIj fieldset > label {
+  display: flex;
+  align-items: center;
+  margin: 0.35rem 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #344054;
+}
+
+#nutshell-form-CarbIj input[type="submit"] {
+  width: 100%;
+  border: 0;
+  border-radius: 9999px;
+  background: #9bc621;
+  color: #101828;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.9rem 1.1rem;
+  box-shadow: 0 10px 24px -14px rgba(155, 198, 33, 0.9);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+#nutshell-form-CarbIj input[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px -16px rgba(155, 198, 33, 0.95);
+  filter: saturate(1.03);
+}
+
+#nutshell-form-CarbIj input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+#nutshell-form-CarbIj img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(16, 24, 40, 0.1);
+}
+
+/* Hide Nutshell intro media/title blocks above fields */
+#nutshell-form-CarbIj #8105-wfFields,
+#nutshell-form-CarbIj #8105-wfFields img,
+#nutshell-form-CarbIj h1.css-rnl19q,
+#nutshell-form-CarbIj form[data-form-type="form"] h1 {
+  display: none !important;
+}
