@@ -7,7 +7,11 @@ import { CONTENT } from "../../lib/constants";
 import RoboMetaTag from "../RoboMetaTag";
 
 const NAV_ITEMS = [
-  { label: "Solutions", href: "/solutions" },
+  {
+    label: "Solutions",
+    href: "/solutions",
+    children: [{ label: "Author's Launchpad", href: "/authors-launchpad" }],
+  },
   { label: "BeSpoke™", href: "/bespoke" },
   { label: "Newsroom", href: "/newsroom" },
   { label: "Pricing", href: "/pricing" },

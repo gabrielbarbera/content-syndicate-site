@@ -7,6 +7,7 @@ interface NavItem {
   label: string;
   href: string;
   external?: boolean;
+  children?: Array<{ label: string; href: string; external?: boolean }>;
 }
 
 interface CardNavProps {
@@ -29,6 +30,7 @@ const CardNav: React.FC<CardNavProps> = ({
   loginHref = "https://admin.contentsyndicate.net/signin",
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   const isActive = (href: string) => {
@@ -67,7 +69,42 @@ const CardNav: React.FC<CardNavProps> = ({
 
           <div className="nav-links-desktop">
             {items.map((item, idx) =>
-              item.external ? (
+              item.children ? (
+                <div
+                  key={idx}
+                  className="nav-dropdown"
+                  onMouseEnter={() => setOpenDropdown(item.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <Link
+                    to={item.href}
+                    className={`nav-link ${isActive(item.href) ? "active" : ""}`}
+                  >
+                    {item.label}
+                  </Link>
+                  {openDropdown === item.label && (
+                    <div className="nav-dropdown-menu">
+                      {item.children.map((child, childIdx) =>
+                        child.external ? (
+                          <a
+                            key={childIdx}
+                            href={child.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="nav-dropdown-link"
+                          >
+                            {child.label}
+                          </a>
+                        ) : (
+                          <Link key={childIdx} to={child.href} className="nav-dropdown-link">
+                            {child.label}
+                          </Link>
+                        )
+                      )}
+                    </div>
+                  )}
+                </div>
+              ) : item.external ? (
                 <a
                   key={idx}
                   href={item.href}
@@ -115,7 +152,47 @@ const CardNav: React.FC<CardNavProps> = ({
         <div className={`mobile-menu ${isExpanded ? "active" : ""}`}>
           <div className="mobile-menu-links">
             {items.map((item, idx) =>
-              item.external ? (
+              item.children ? (
+                <div key={idx} className="mobile-nav-dropdown">
+                  <Link
+                    to={item.href}
+                    className={`mobile-nav-link ${isActive(item.href) ? "active" : ""}`}
+                    onClick={() => {
+                      setIsExpanded(false);
+                      setOpenDropdown(openDropdown === item.label ? null : item.label);
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                  {openDropdown === item.label && (
+                    <div className="mobile-dropdown-menu">
+                      {item.children.map((child, childIdx) =>
+                        child.external ? (
+                          <a
+                            key={childIdx}
+                            href={child.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mobile-dropdown-link"
+                            onClick={() => setIsExpanded(false)}
+                          >
+                            {child.label}
+                          </a>
+                        ) : (
+                          <Link
+                            key={childIdx}
+                            to={child.href}
+                            className="mobile-dropdown-link"
+                            onClick={() => setIsExpanded(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        )
+                      )}
+                    </div>
+                  )}
+                </div>
+              ) : item.external ? (
                 <a
                   key={idx}
                   href={item.href}
