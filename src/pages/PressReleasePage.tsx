@@ -20,34 +20,6 @@ function renderPlainTextContent(content: string) {
     .map((paragraph) => <p key={paragraph}>{paragraph}</p>);
 }
 
-function moveMediaBeforeText(content: string): string {
-  if (typeof window === "undefined") return content;
-
-  const doc = new DOMParser().parseFromString(content, "text/html");
-  const media = Array.from(doc.body.querySelectorAll("img, video, iframe"));
-
-  if (media.length === 0) {
-    return content;
-  }
-
-  const mediaHtml = media
-    .map((element) => {
-      const wrapper = element.closest("figure, picture, p, div");
-      const html = wrapper?.outerHTML || element.outerHTML;
-
-      if (wrapper && wrapper.textContent?.trim() === "") {
-        wrapper.remove();
-      } else {
-        element.remove();
-      }
-
-      return html;
-    })
-    .join("");
-
-  return `${mediaHtml}${doc.body.innerHTML}`;
-}
-
 export default function PressReleasePage() {
   const { slug } = useParams<{ slug: string }>();
   const { data: releases, loading, error } = useRssFeed();
@@ -114,7 +86,7 @@ export default function PressReleasePage() {
   const pubDate = new Date(release.pubDate);
   const releaseContent = release.content || release.description || "";
   const isHtmlContent = hasHtmlTags(releaseContent);
-  const formattedHtmlContent = isHtmlContent ? moveMediaBeforeText(releaseContent) : "";
+  const formattedHtmlContent = releaseContent;
   const sourceLabel = release.organization || release.category?.[0] || "Content Syndicate";
 
   return (
@@ -153,8 +125,10 @@ export default function PressReleasePage() {
                 <h1 className="max-w-4xl text-3xl font-bold leading-[1.08] tracking-tight text-white font-display sm:text-4xl lg:text-5xl">
                   {release.title}
                 </h1>
+              </header>
 
-                <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-white/[0.07] pt-5 text-[0.8125rem] text-white/55">
+              <div className="border-b border-white/[0.07] px-6 py-6 sm:px-8 lg:px-14">
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.8125rem] text-white/55">
                   <time dateTime={release.pubDate} className="inline-flex items-center gap-2">
                     <Calendar size={14} className="text-accent/70" />
                     <span>{format(pubDate, "d MMMM yyyy")}</span>
@@ -177,7 +151,7 @@ export default function PressReleasePage() {
                     </>
                   )}
                 </div>
-              </header>
+              </div>
 
               <div className="mx-auto max-w-[720px] px-6 py-8 sm:px-8 lg:px-0 lg:py-12">
                 {isHtmlContent ? (

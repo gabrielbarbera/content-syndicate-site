@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
-import { ExternalLink, Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { format } from "date-fns";
+import { Link } from "react-router-dom";
 import type { PressRelease } from "../../types/newsroom";
 
 interface NewsCardProps {
@@ -9,6 +10,10 @@ interface NewsCardProps {
 
 export function NewsCard({ release }: NewsCardProps) {
   const pubDate = new Date(release.pubDate);
+
+  // Generate slug from the release link
+  const slug = release.link.split("/").pop()?.split("?").at(0) ?? "";
+  const internalPath = `/press-release/${slug}`;
 
   return (
     <motion.article
@@ -53,16 +58,14 @@ export function NewsCard({ release }: NewsCardProps) {
               {release.organization}
             </span>
           )}
-          <a
-            href={release.link}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to={internalPath}
             className="absolute inset-0 z-10"
             aria-label={`Read more about ${release.title}`}
           />
           <div className="ml-auto inline-flex items-center gap-1.5 text-[0.8125rem] font-semibold text-accent/80 transition-all duration-300 group-hover:text-accent group-hover:gap-2.5">
             <span>Read</span>
-            <ExternalLink size={13} />
+            <ArrowRight size={13} />
           </div>
         </div>
       </div>
