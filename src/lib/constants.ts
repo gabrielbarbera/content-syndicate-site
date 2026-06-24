@@ -12,7 +12,7 @@ export const CONTENT: Content = {
     subheading: "Our BeSpoke campaigns deliver:",
     services: [
       { label: "PR & Media Relations", description: "Build authority." },
-      { label: "TV, OTT/CTV & Radio", description: "Own attention." },
+      { label: "Broadcast TV, OTT/CTV & Radio", description: "Own attention." },
       { label: "Billboard Strategy & Placement", description: "Maximise visibility." },
       { label: "Full-Service Campaigns", description: "Grow your influence." },
     ],
