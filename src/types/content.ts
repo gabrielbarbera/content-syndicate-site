@@ -1,4 +1,4 @@
-export type IconType = 'Zap' | 'Shield' | 'Globe' | 'Sparkles';
+export type IconType = "Zap" | "Shield" | "Globe" | "Sparkles";
 
 export interface Package {
   name: string;
@@ -14,12 +14,24 @@ export interface ComparisonRow {
   without: string;
 }
 
+export interface HeroService {
+  label: string;
+  description: string;
+}
+
+export interface HeroSubContent {
+  intro: string;
+  punchline: string;
+  subheading: string;
+  services: HeroService[];
+}
+
 export interface Content {
   name: string;
   shortName: string;
   heroTitle: string;
   heroAccent: string;
-  heroSub: string;
+  heroSub: HeroSubContent;
   about: string;
   packages: Package[];
   priceRange: string;

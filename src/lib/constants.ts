@@ -5,8 +5,18 @@ export const CONTENT: Content = {
   shortName: "CS",
   heroTitle: "Stop Being Invisible.",
   heroAccent: "Start Getting Noticed.",
-  heroSub:
-    'The digital noise is louder than ever. If your brand isn\'t appearing in the headlines or showing up in AI-generated search results, you don\'t have a marketing problem—you have an existence problem.\n\nAt Content Syndicate, we bridge the gap between "best-kept secret" and "industry authority." Whether you\'re a marketing agency looking to scale your clients or a business owner ready for the big leagues, we provide the high-authority fuel your brand needs to ignite.',
+  heroSub: {
+    intro:
+      "Content Syndicate transforms brands from best-kept secrets into industry leaders through strategic media, storytelling, and brand amplification.",
+    punchline: "We go beyond press releases.",
+    subheading: "Our BeSpoke campaigns deliver:",
+    services: [
+      { label: "PR & Media Relations", description: "Build authority." },
+      { label: "TV, OTT/CTV & Radio", description: "Own attention." },
+      { label: "Billboard Strategy & Placement", description: "Maximise visibility." },
+      { label: "Full-Service Campaigns", description: "Grow your influence." },
+    ],
+  },
   about:
     'We bridge the gap between "best-kept secret" and "industry authority." High-authority fuel for brands ready to ignite.',
   packages: [

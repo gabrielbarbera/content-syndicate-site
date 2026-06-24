@@ -81,9 +81,31 @@ const HeroSection = () => {
             transition={{ delay: 0.6 }}
             className="max-w-xl"
           >
-            <p className="text-xl lg:text-2xl text-white/60 leading-relaxed font-medium whitespace-pre-line">
-              {CONTENT.heroSub}
+            <p className="text-lg lg:text-xl text-white/50 leading-relaxed font-medium">
+              {CONTENT.heroSub.intro}
             </p>
+
+            <p className="mt-6 text-3xl lg:text-4xl font-bold text-white tracking-tight font-display">
+              {CONTENT.heroSub.punchline}
+            </p>
+
+            <div className="mt-8">
+              <p className="text-xs font-bold text-accent uppercase tracking-[0.3em] mb-4">
+                {CONTENT.heroSub.subheading}
+              </p>
+              <ul className="space-y-3">
+                {CONTENT.heroSub.services.map((service) => (
+                  <li key={service.label} className="flex items-baseline gap-3">
+                    <span className="text-accent text-xs mt-1">◆</span>
+                    <span className="text-base lg:text-lg text-white/80">
+                      <span className="font-bold text-white">{service.label}</span>
+                      {" — "}
+                      {service.description}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         </div>
 
