@@ -186,7 +186,7 @@ export default function EditorialGuidelinesPage() {
                   </div>
                 </a>
                 <a
-                  href="mailto:press@contentsyndicate.net"
+                  href="mailto:support@contentsyndicate.net"
                   className="flex items-center gap-4 p-5 rounded-xl border border-zinc-200 hover:border-accent/40 hover:bg-accent/5 transition-all group"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-dark transition-all">
@@ -197,7 +197,7 @@ export default function EditorialGuidelinesPage() {
                       Media Inquiries
                     </div>
                     <div className="font-semibold text-dark group-hover:text-accent transition-colors">
-                      press@contentsyndicate.net
+                      support@contentsyndicate.net
                     </div>
                   </div>
                 </a>
