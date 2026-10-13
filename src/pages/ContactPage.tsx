@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { PageHeader } from "../components/layout/PageHeader";
-import { ContactForm } from "../components/forms/ContactForm";
+import { NutshellContactForm } from "../components/forms/NutshellContactForm";
 import SEO from "../components/SEO";
 
 const CONTACT_INFO = [
@@ -109,7 +109,7 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <ContactForm />
+                <NutshellContactForm />
               </div>
             </motion.div>
           </div>

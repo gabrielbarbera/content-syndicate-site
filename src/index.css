@@ -375,17 +375,17 @@
 }
 
 /* Nutshell direct-DOM form styling */
-#nutshell-form-CarbIj #peanut-container {
+#nutshell-form-aheG1q #peanut-container {
   border-radius: 1rem;
   background: transparent;
 }
 
-#nutshell-form-CarbIj form[data-form-type="form"] {
+#nutshell-form-aheG1q form[data-form-type="form"] {
   color: #101828;
   font-family: var(--font-sans);
 }
 
-#nutshell-form-CarbIj h1 {
+#nutshell-form-aheG1q h1 {
   margin: 0 0 1rem;
   color: #101828;
   font-family: var(--font-display);
@@ -394,8 +394,8 @@
   font-weight: 600;
 }
 
-#nutshell-form-CarbIj label,
-#nutshell-form-CarbIj legend {
+#nutshell-form-aheG1q label,
+#nutshell-form-aheG1q legend {
   display: block;
   margin-bottom: 0.4rem;
   color: #101828;
@@ -404,11 +404,11 @@
   letter-spacing: 0.01em;
 }
 
-#nutshell-form-CarbIj input[type="text"],
-#nutshell-form-CarbIj input[type="email"],
-#nutshell-form-CarbIj input[type="tel"],
-#nutshell-form-CarbIj textarea,
-#nutshell-form-CarbIj select {
+#nutshell-form-aheG1q input[type="text"],
+#nutshell-form-aheG1q input[type="email"],
+#nutshell-form-aheG1q input[type="tel"],
+#nutshell-form-aheG1q textarea,
+#nutshell-form-aheG1q select {
   width: 100%;
   border: 1px solid rgba(16, 24, 40, 0.16);
   border-radius: 0.85rem;
@@ -422,28 +422,28 @@
     box-shadow 0.2s ease;
 }
 
-#nutshell-form-CarbIj textarea {
+#nutshell-form-aheG1q textarea {
   min-height: 140px;
   resize: vertical;
 }
 
-#nutshell-form-CarbIj input[type="text"]:focus,
-#nutshell-form-CarbIj input[type="email"]:focus,
-#nutshell-form-CarbIj input[type="tel"]:focus,
-#nutshell-form-CarbIj textarea:focus,
-#nutshell-form-CarbIj select:focus {
+#nutshell-form-aheG1q input[type="text"]:focus,
+#nutshell-form-aheG1q input[type="email"]:focus,
+#nutshell-form-aheG1q input[type="tel"]:focus,
+#nutshell-form-aheG1q textarea:focus,
+#nutshell-form-aheG1q select:focus {
   outline: none;
   border-color: #9bc621;
   box-shadow: 0 0 0 4px rgba(155, 198, 33, 0.18);
 }
 
-#nutshell-form-CarbIj input[type="checkbox"],
-#nutshell-form-CarbIj input[type="radio"] {
+#nutshell-form-aheG1q input[type="checkbox"],
+#nutshell-form-aheG1q input[type="radio"] {
   accent-color: #9bc621;
   margin-right: 0.55rem;
 }
 
-#nutshell-form-CarbIj fieldset {
+#nutshell-form-aheG1q fieldset {
   border: 1px solid rgba(16, 24, 40, 0.1);
   border-radius: 0.85rem;
   background: rgba(255, 255, 255, 0.7);
@@ -451,7 +451,7 @@
   padding: 0.8rem 1rem 0.9rem;
 }
 
-#nutshell-form-CarbIj fieldset > label {
+#nutshell-form-aheG1q fieldset > label {
   display: flex;
   align-items: center;
   margin: 0.35rem 0;
@@ -460,7 +460,7 @@
   color: #344054;
 }
 
-#nutshell-form-CarbIj input[type="submit"] {
+#nutshell-form-aheG1q input[type="submit"] {
   width: 100%;
   border: 0;
   border-radius: 9999px;
@@ -479,17 +479,17 @@
     filter 0.2s ease;
 }
 
-#nutshell-form-CarbIj input[type="submit"]:hover {
+#nutshell-form-aheG1q input[type="submit"]:hover {
   transform: translateY(-1px);
   box-shadow: 0 14px 30px -16px rgba(155, 198, 33, 0.95);
   filter: saturate(1.03);
 }
 
-#nutshell-form-CarbIj input[type="submit"]:active {
+#nutshell-form-aheG1q input[type="submit"]:active {
   transform: translateY(0);
 }
 
-#nutshell-form-CarbIj img {
+#nutshell-form-aheG1q img {
   width: 100%;
   height: auto;
   border-radius: 0.85rem;
@@ -497,9 +497,9 @@
 }
 
 /* Hide Nutshell intro media/title blocks above fields */
-#nutshell-form-CarbIj #8105-wfFields,
-#nutshell-form-CarbIj #8105-wfFields img,
-#nutshell-form-CarbIj h1.css-rnl19q,
-#nutshell-form-CarbIj form[data-form-type="form"] h1 {
+#nutshell-form-aheG1q [id="8105-wfFields"],
+#nutshell-form-aheG1q [id="8105-wfFields"] img,
+#nutshell-form-aheG1q h1.css-rnl19q,
+#nutshell-form-aheG1q form[data-form-type="form"] h1 {
   display: none !important;
 }
